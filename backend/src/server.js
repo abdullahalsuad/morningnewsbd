@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 
 // routes
-// import testRoutes from "./routes/testRoutes.js";
+import newsRouter from "./routes/news.router.js";
 
 dotenv.config();
 const app = express();
@@ -19,7 +19,7 @@ app.use(express.json());
 connectDB();
 
 // Routes for articles
-// app.use("/api/v1", testRoutes);
+app.use("/api/v1/news", newsRouter);
 
 // Basic route
 app.get("/", (req, res) => {
