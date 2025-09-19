@@ -114,7 +114,7 @@ export default function NewsTabs() {
 
       {/* News List */}
       <ul
-        className="divide-y divide-gray-200 max-h-[340px] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:theme(colors.gray.400)_transparent]
+        className="divide-y divide-gray-200 max-h-[450px] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:theme(colors.gray.400)_transparent]
         [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-400"
       >
         {dataset.map((n, idx) => (

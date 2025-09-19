@@ -135,7 +135,7 @@ export default function Footer({
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-6 text-sm flex flex-wrap items-center justify-between gap-3">
+        <div className="mt-10 mb-10 border-t border-white/10 pt-6 text-sm flex flex-wrap items-center justify-between gap-3">
           <p>© সকল কিছুর স্বত্বাধিকার সংরক্ষিত {year} : সংবাদ ৭১ বিডি</p>
           <p>
             সকল কারিগরি সহযোগিতায় :{" "}

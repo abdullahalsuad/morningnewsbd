@@ -4,22 +4,20 @@ import React from "react";
 
 const HighlightNewsBlock = ({ title }) => {
   return (
-    <section className=" overflow-hidden">
+    <section className="overflow-hidden">
       {/* Header */}
 
       <div className="relative h-9 bg-[#E9F2F9]">
-        <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-5 py-5 p-4 bg-[#0E4E73] clip-path-header">
-          <span className="inline-flex  items-center justify-center">
+        <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-5 bg-[#0E4E73] clip-path-header">
+          <span className="inline-flex items-center justify-center">
             <NewspaperIcon size={20} className="text-white" />
           </span>
           <span className="text-white text-[15px] font-semibold">{title}</span>
         </div>
-      </div>
-      {/* right link */}
-      <div className="absolute right-0 inset-y-0 flex items-center">
+
         <a
           href="#"
-          className="flex items-center gap-1 pr-3 text-[14px] font-semibold text-[#0E4E73]"
+          className="absolute inset-y-0 right-3 flex items-center gap-1 text-[14px] font-semibold text-[#0E4E73]"
         >
           আরও খবর
           <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">

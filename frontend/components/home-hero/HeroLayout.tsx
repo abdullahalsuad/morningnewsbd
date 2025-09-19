@@ -2,6 +2,7 @@ import React from "react";
 import NewsTabs from "./NewsTabs";
 import RightSidebar from "./RightSidebar";
 import SmallPostCards from "./SmallPostCards";
+import NewsCarousel from "./NewsCarousel";
 
 export default function HeroLayout({ items = [] }) {
   return (
@@ -13,9 +14,7 @@ export default function HeroLayout({ items = [] }) {
           <div className="grid grid-cols-12 ">
             {/* HERO */}
             <div className="col-span-12 lg:col-span-7">
-              <div className="h-[360px] rounded-lg bg-blue-700 text-white grid place-items-center">
-                Hero 5
-              </div>
+              <NewsCarousel />
             </div>
 
             {/* NEWS TABS */}
