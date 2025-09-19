@@ -117,6 +117,10 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+.clip-path-header {
+  clip-path: polygon(0 0, 95% 0, 90% 100%, 0% 100%);
+}
+
 /* @layer base {
   * {
     @apply border-border outline-ring/50;

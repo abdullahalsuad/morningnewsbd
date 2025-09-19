@@ -1,9 +1,7 @@
 "use client";
+
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-// Fixed & cleaned up: proper grid, valid Tailwind classes, pixel-like spacing,
-// and marquee kept.
 
 type FooterProps = {
   notice?: string;
@@ -149,7 +147,7 @@ export default function Footer({
       </div>
 
       {/* Notice bar */}
-      <div className="w-full bg-white text-[#111] border-t border-[#eee]">
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white text-[#111] border-t border-[#eee]]">
         <div className="relative  px-0">
           <div className="absolute left-0 top-0 bottom-0 z-10 flex items-center">
             <div className="bg-[#8b0000] text-white px-5 py-3 font-semibold select-none">

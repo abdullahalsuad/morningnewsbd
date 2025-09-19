@@ -1,0 +1,23 @@
+import React from "react";
+import NewsCard from "./NewsCard";
+import MiddleNewsCard from "./MiddleNewsCard";
+
+const HomeThirdSection = () => {
+  return (
+    <div className="mx-auto max-w-7xl py-2 my-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-5 md:gap-6 auto-rows-fr my-10 ">
+        <div className="col-span-3">
+          <NewsCard title="খেলাধুলা" />
+        </div>
+        <div className="col-span-6">
+          <MiddleNewsCard />
+        </div>
+        <div className="col-span-3">
+          <NewsCard title="জাতীয়" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default HomeThirdSection;
