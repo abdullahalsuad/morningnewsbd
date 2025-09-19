@@ -8,13 +8,13 @@ const SocialLogin = () => {
     signIn("google", { callbackUrl: "/" });
   };
   return (
-    <div className="lg:w-6/12 mx-auto text-center mt-10">
+    <div className="lg:w-8/12 mx-auto text-center mt-10">
       <div className="grid place-items-center">
         <button
           onClick={handleAuth}
-          className="flex items-center justify-center gap-2 py-2.5 
+          className="flex items-center justify-center gap-2 py-2.5 dark:border-0
                 border border-gray-300 rounded-lg bg-blue-900 
-                text-gray-800 dark:text-white text-sm font-medium 
+                text-gray-200 dark:text-white text-sm font-medium 
                 hover:bg-gray-700 transition-colors duration-200 cursor-pointer px-6"
         >
           <Zap className="w-4 h-4" />

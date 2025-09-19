@@ -1,8 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/Navbar";
+import "../globals.css";
+import Navbar from "@/components/header/Navbar";
 import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,13 +29,14 @@ export default async function RootLayout({ children }) {
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
           <SessionProvider>
-            <Navbar />
+            <Header />
             <main className="container mx-auto px-4 py-8">{children}</main>
+            <Footer />
           </SessionProvider>
         </ThemeProvider>
       </body>
