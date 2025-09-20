@@ -1,6 +1,7 @@
 import { fetchNews } from "@/lib/api";
 import { NewsItem } from "@/utils/news";
 import React from "react";
+import Image from "next/image";
 
 export default async function AllNews() {
   let newsList: NewsItem[] = [];
@@ -31,11 +32,12 @@ export default async function AllNews() {
               aria-label={`News article titled ${news.title}`}
             >
               {news.coverImage?.url && (
-                <img
+                <Image
                   src={news.coverImage.url}
                   alt={news.coverImage.imgCaption || news.title}
                   className="h-48 w-full object-cover"
-                  loading="lazy"
+                  width={500}
+                  height={300}
                 />
               )}
               <div className="p-6 flex flex-col flex-grow">
@@ -65,11 +67,12 @@ export default async function AllNews() {
                   {news.author && (
                     <div className="flex items-center gap-3">
                       {news.author.image && (
-                        <img
+                      <Image
                           src={news.author.image}
                           alt={news.author.name || "Author"}
                           className="w-10 h-10 rounded-full object-cover"
-                          loading="lazy"
+                          width={40}
+                          height={40}
                         />
                       )}
                       <div>

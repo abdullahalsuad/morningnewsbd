@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const MoreNationalNews = () => {
@@ -52,7 +53,9 @@ const MoreNationalNews = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
           {articles.map((article) => (
             <div key={article.id} className="cursor-pointer">
-              <img
+              <Image
+                height={500}
+                width={500}
                 src={article.image}
                 alt={article.title}
                 className="w-full h-32 object-cover"

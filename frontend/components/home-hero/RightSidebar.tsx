@@ -1,10 +1,11 @@
+// components/RightSidebar.jsx
 import { NewspaperIcon, Play, Volume2 } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
 export default function RightSidebar() {
   return (
-    <aside className="w-[312px] space-y-4">
+    <aside className="w-full lg:w-[312px] space-y-4">
       <CategoryNewsCard />
       <LiveTvCard />
       <FacebookBlock />
@@ -12,38 +13,44 @@ export default function RightSidebar() {
   );
 }
 
+/*  Category card  */
 function CategoryNewsCard() {
   return (
     <section className="rounded-md border-4 border-[#0E4E73] bg-white shadow-sm overflow-hidden">
       {/* Header */}
       <div className="relative h-9 bg-[#E9F2F9] my-2 mx-3">
-        <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-5 py-5 p-4 bg-[#0E4E73] clip-path-header">
+        <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-4 sm:px-5 bg-[#0E4E73] clip-path-header">
           <span className="inline-flex h-[14px] w-[14px] items-center justify-center">
-            <NewspaperIcon size={20} className="text-white" />
+            <NewspaperIcon size={18} className="text-white" />
           </span>
-          <span className="text-white text-[15px] font-semibold">জাতীয়</span>
+          <span className="text-white text-sm sm:text-[15px] font-semibold">
+            জাতীয়
+          </span>
         </div>
       </div>
 
       {/* Big media */}
       <div className="px-3 pb-2">
-        <div className="relative aspect-[16/9] w-full overflow-hidden  border">
+        <div className="relative aspect-[16/9] w-full overflow-hidden border">
           <Image
-            width={400}
-            height={400}
-            className="object-cover"
             src="https://picsum.photos/seed/top/640/360"
             alt="main"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 400px"
           />
 
-          <button className="absolute inset-0 grid place-items-center">
-            <span className="grid place-items-center h-12 w-12 rounded-full bg-white/85 shadow-md">
+          <button
+            aria-label="Play"
+            className="absolute inset-0 grid place-items-center"
+          >
+            <span className="grid place-items-center h-10 sm:h-12 w-10 sm:w-12 rounded-full bg-white/85 shadow-md">
               <Play />
             </span>
           </button>
         </div>
 
-        <h3 className="my-4 text-[18px] leading-6 font-semibold text-gray-900">
+        <h3 className="my-4 text-base sm:text-lg leading-6 font-semibold text-gray-900">
           প্রধান উপদেষ্টাকে মার্চে বেইজিং সফরে নিতে আগ্রহী চীন
         </h3>
       </div>
@@ -63,7 +70,7 @@ function CategoryNewsCard() {
       <div className="px-3 pb-3 flex justify-end my-2">
         <a
           href="#"
-          className="flex items-center gap-1 text-[14px] font-semibold text-[#0E4E73]"
+          className="flex items-center gap-1 text-sm sm:text-[14px] font-semibold text-[#0E4E73]"
         >
           আরও খবর
           <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
@@ -75,23 +82,26 @@ function CategoryNewsCard() {
   );
 }
 
-// small card
+/*  SmallItem  */
 function SmallItem({ img, title }) {
   return (
     <li className="flex items-center gap-2">
-      <img
+      <Image
+        width={500}
+        height={500}
         src={img}
         alt="thumb"
-        className="h-[52px] w-[88px] rounded-sm border object-cover"
+        className="h-[48px] sm:h-[52px] w-[80px] sm:w-[88px] rounded-sm border object-cover"
+        loading="lazy"
       />
-      <p className="text-[14px] leading-5 font-medium text-gray-900 line-clamp-2">
+      <p className="text-sm sm:text-[14px] leading-5 font-medium text-gray-900 line-clamp-2">
         {title}
       </p>
     </li>
   );
 }
 
-// live card
+/*  Live TV  */
 function LiveTvCard() {
   return (
     <section className="overflow-hidden">
@@ -101,7 +111,6 @@ function LiveTvCard() {
         <span className="text-[15px] font-semibold text-white">লাইভ টিভি</span>
       </div>
 
-      {/* Video thumbnail with play */}
       <div className="my-2 relative w-full aspect-video">
         <iframe
           src="https://www.youtube.com/embed/w_jwubVsEdg?autoplay=0&rel=0"
@@ -116,32 +125,35 @@ function LiveTvCard() {
   );
 }
 
-// FacebookBlock
+/*  Facebook block + audio  */
 function FacebookBlock() {
   return (
-    <section className=" overflow-hidden">
-      {/* Header: light bar + left marker */}
+    <section className="overflow-hidden">
+      {/* Header */}
       <div className="h-10 bg-[#EEF3F7]">
-        <h4 className="h-full pl-4 flex items-center text-[15px] border-l-4 border-[#0E4E73]  font-semibold text-[#0E4E73]">
+        <h4 className="h-full pl-4 flex items-center text-[15px] border-l-4 border-[#0E4E73] font-semibold text-[#0E4E73]">
           ফেসবুকে আমরা
         </h4>
       </div>
 
-      {/* Facebook preview */}
-      <div className="py-3">
-        <iframe
-          src="https://www.facebook.com/official.creativedesign/?ref=embed_page#"
-          title="Live TV"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
+      {/* Facebook preview  */}
+      <div className="py-3 px-3">
+        <div className="w-full h-56 sm:h-72 overflow-hidden rounded border">
+          <iframe
+            src="https://www.facebook.com/official.creativedesign/?ref=embed_page#"
+            title="Facebook"
+            className="w-full h-full border-0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            frameBorder="0"
+            allowFullScreen
+          ></iframe>
+        </div>
       </div>
 
       <div className="relative h-9 bg-[#E9F2F9] ">
-        <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-6 py-5 p-4 bg-[#0A4466] clip-path-header">
+        <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-6 py-2 bg-[#0A4466] clip-path-header">
           <span className="inline-flex h-[14px] w-[14px] items-center justify-center">
-            <Volume2 size={20} className="text-white" />
+            <Volume2 size={18} className="text-white" />
           </span>
           <span className="text-white text-[15px] font-semibold">
             আমাদের জাতীয় সঙ্গীত

@@ -30,7 +30,7 @@ export default function HeroLayout({ items = [] }) {
         </section>
 
         {/* RIGHT SIDEBAR  */}
-        <aside className="col-span-12 lg:col-span-3 overflow-hidden">
+        <aside className="col-span-12 lg:col-span-3 overflow-hidden px-4 lg:px-0">
           <RightSidebar />
         </aside>
       </div>

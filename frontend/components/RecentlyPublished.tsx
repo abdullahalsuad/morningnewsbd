@@ -48,8 +48,8 @@ export default function RecentlyPublished() {
   ];
 
   return (
-    <>
-      <hr className="mt-10 border-t-2 border-[#0A4466] my-4" />
+    <section className="px-4 lg:px-0">
+      <hr className="mt-10 border-t-2 border-[#0A4466] my-4 " />
 
       <div>
         <div className="flex items-center justify-between border-b border-gray-300 pb-1 ">
@@ -92,6 +92,6 @@ export default function RecentlyPublished() {
           ))}
         </div>
       </div>
-    </>
+    </section>
   );
 }

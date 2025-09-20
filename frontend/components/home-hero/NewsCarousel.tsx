@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 const newsSlides = [
   {
@@ -79,7 +80,9 @@ export default function BengaliNewsSlider() {
               <div className="relative">
                 {/* Full Image Background */}
                 <div className="aspect-[16/10] relative overflow-hidden">
-                  <img
+                  <Image
+                    height={500}
+                    width={500}
                     src={slide.image}
                     alt={slide.mainTitle}
                     className="w-full h-full object-cover"

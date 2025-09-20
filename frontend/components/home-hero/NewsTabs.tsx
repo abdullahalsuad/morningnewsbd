@@ -87,7 +87,7 @@ export default function NewsTabs() {
   const dataset = tab === "latest" ? latestNews : popularNews;
 
   return (
-    <div className="px-5">
+    <div className="px-5 my-4">
       {/* Tabs */}
       <div className="grid grid-cols-2 text-center border-t-2 border-[#0E4E73] text-[15px] font-semibold">
         <button

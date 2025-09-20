@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { Home } from "lucide-react";
 
@@ -13,10 +14,10 @@ const Breadcrumb = () => {
       <ol className="flex items-center space-x-2 text-sm text-gray-700">
         {/* Home Icon */}
         <li>
-          <a href="/" className="flex items-center hover:text-red-500">
+          <Link href="/" className="flex items-center hover:text-red-500">
             <Home size={14} className="mr-1" />
             <span>প্রচ্ছদ</span>
-          </a>
+          </Link>
         </li>
 
         {/* Other Paths */}
@@ -25,12 +26,12 @@ const Breadcrumb = () => {
             <span className="mx-1">
               <MdKeyboardDoubleArrowRight />
             </span>
-            <a
+            <Link
               href={path.href}
               className="hover:text-red-500 transition-colors"
             >
               {path.name}
-            </a>
+            </Link>
           </li>
         ))}
       </ol>

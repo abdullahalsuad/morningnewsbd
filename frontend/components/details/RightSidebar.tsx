@@ -67,7 +67,9 @@ const RightSidebar = () => {
           .filter((a) => !a.featured)
           .map((article) => (
             <div key={article.id} className="cursor-pointer">
-              <img
+              <Image
+                width={500}
+                height={500}
                 src={article.image}
                 alt={article.title}
                 className="w-full h-24 object-cover rounded"
