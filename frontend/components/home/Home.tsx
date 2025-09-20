@@ -9,11 +9,14 @@ import { HomeEightSection } from "../home-second-section/HomeEightSection";
 import RecentlyPublished from "../RecentlyPublished";
 import MediaPhotoGallery from "../last-section/MediaPhotoGallery";
 import VideoGallery from "../VideoGallery";
+import { NewsHeading } from "../header/NewsHeading";
 
 const Home = () => {
   return (
     <>
       <div className="mx-auto max-w-7xl mt-4">
+        <NewsHeading />
+
         <HeroLayout />
 
         {/* ads */}

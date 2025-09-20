@@ -2,7 +2,6 @@ import React from "react";
 import HeaderTop from "./HeaderTop";
 import HeaderMain from "./HeaderMain";
 import NavBar from "./Navbar";
-import { NewsHeading } from "./NewsHeading";
 
 const Header = () => {
   return (
@@ -15,8 +14,6 @@ const Header = () => {
 
       {/*  main navigation */}
       <NavBar />
-
-      <NewsHeading />
     </>
   );
 };
