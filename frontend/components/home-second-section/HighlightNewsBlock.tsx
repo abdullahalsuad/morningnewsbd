@@ -7,7 +7,7 @@ const HighlightNewsBlock = ({ title }) => {
     <section className="overflow-hidden">
       {/* Header */}
 
-      <div className="relative h-9 bg-[#E9F2F9]">
+      <div className="relative h-13 bg-[#E9F2F9]">
         <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-5 bg-[#0E4E73] clip-path-header">
           <span className="inline-flex items-center justify-center">
             <NewspaperIcon size={20} className="text-white" />
@@ -29,7 +29,7 @@ const HighlightNewsBlock = ({ title }) => {
       {/* card */}
       <div className=" border border-gray-100 bg-white shadow-sm my-3">
         {/* Feature */}
-        <div className="px-3 pb-2 pt-3">
+        <div className="p-1">
           <div className="rounded-[3px] overflow-hidden border">
             <Image
               width={500}

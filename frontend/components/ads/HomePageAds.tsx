@@ -8,7 +8,7 @@ interface HomePageAdsProps {
 
 const HomePageAds = ({ src, alt = "ads" }: HomePageAdsProps) => {
   return (
-    <div className="w-full my-4">
+    <div className="mx-auto w-8/12  my-6">
       <Image
         src={src}
         alt={alt}

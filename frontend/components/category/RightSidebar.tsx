@@ -3,13 +3,13 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function NewsTabs() {
+export default function RightSidebar() {
   const [tab, setTab] = useState<"latest" | "popular">("latest");
 
   const latestNews = [
     {
       id: 1,
-      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
+      title: "রিকশাচালককে গুলি করে হত্যা মামলায় কারাগারে চিকিৎসকসহ পাঁচজন",
       thumb:
         "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop",
     },
@@ -87,14 +87,14 @@ export default function NewsTabs() {
   const dataset = tab === "latest" ? latestNews : popularNews;
 
   return (
-    <div className="px-5">
+    <div>
       {/* Tabs */}
-      <div className="grid grid-cols-2 text-center border-t-4 border-[#0E4E73] text-[15px] font-semibold">
+      <div className="grid grid-cols-2 text-center   text-[17px] font-semibold">
         <button
           className={`py-2 cursor-pointer ${
             tab === "latest"
-              ? "bg-[#0E4E73] text-white"
-              : "bg-gray-100 text-[#0E4E73]"
+              ? "bg-white text-[#0E4E73] border-t-3 border-[#0E4E73]"
+              : "bg-[#DDDDDD] text-[#0E4E73] border-t-3 border-[#8B1010]"
           }`}
           onClick={() => setTab("latest")}
         >
@@ -103,8 +103,8 @@ export default function NewsTabs() {
         <button
           className={`py-2 cursor-pointer ${
             tab === "popular"
-              ? "bg-[#0E4E73] text-white"
-              : "bg-gray-100 text-[#0E4E73]"
+              ? "bg-white text-[#0E4E73] border-t-3 border-[#0E4E73]"
+              : "bg-[#DDDDDD] text-[#0E4E73] border-t-3 border-[#8B1010]"
           }`}
           onClick={() => setTab("popular")}
         >
@@ -130,14 +130,14 @@ export default function NewsTabs() {
               <Image
                 src={n.thumb}
                 alt="thumb"
-                width={100}
-                height={60}
+                width={120}
+                height={70}
                 className=" object-cover rounded-sm border border-gray-200"
               />
 
               {/* Text */}
               <div className="min-w-0 leading-snug pt-0.5">
-                <h4 className="text-[16px] font-semibold text-gray-900 tracking-tight line-clamp-2">
+                <h4 className="text-[17px] font-medium text-gray-900 tracking-tight ">
                   {n.title}
                 </h4>
               </div>
@@ -145,6 +145,14 @@ export default function NewsTabs() {
           </li>
         ))}
       </ul>
+
+      <Image
+        className="my-2"
+        alt="thumb"
+        width={500}
+        height={70}
+        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJzjUlrsCObpKCcZVhpveAxQXG5s1Nv7C8mxpmZWdgluDF6z5m3aAF7Mth6ycqS-3igAJ7ABRrK4VmPyyb_bqiTyaZqxJEHQ-crCcbbSHF_4NkwF5x96RBTkVdIHroZ1coRw2GqKkuBcdVlxTg7Emga-xb7hX3ZXz035N6v-2P3tLwe8lJRpEucwXHO_zV/s500/vertical.gif"
+      />
     </div>
   );
 }

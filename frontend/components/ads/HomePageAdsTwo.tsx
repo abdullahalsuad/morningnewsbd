@@ -15,26 +15,28 @@ const HomePageAdsTwo = ({
   alt2 = "ad 2",
 }: HomePageAdsProps) => {
   return (
-    <div className="my-4 grid grid-cols-2 gap-4">
-      <Image
-        src={src}
-        alt={alt1}
-        width={1000}
-        height={500}
-        className="w-full h-auto"
-        sizes="(min-width: 768px) 50vw, 100vw"
-        priority
-      />
-      <Image
-        src={src2}
-        alt={alt2}
-        width={1000}
-        height={500}
-        className="w-full h-auto"
-        sizes="(min-width: 768px) 50vw, 100vw"
-        loading="lazy"
-      />
-    </div>
+    <section className=" mx-auto w-8/12">
+      <div className="my-4 grid grid-cols-2 gap-4">
+        <Image
+          src={src}
+          alt={alt1}
+          width={1000}
+          height={500}
+          className="w-full h-auto"
+          sizes="(min-width: 768px) 50vw, 100vw"
+          priority
+        />
+        <Image
+          src={src2}
+          alt={alt2}
+          width={1000}
+          height={500}
+          className="w-full h-auto"
+          sizes="(min-width: 768px) 50vw, 100vw"
+          loading="lazy"
+        />
+      </div>
+    </section>
   );
 };
 

@@ -4,7 +4,7 @@ export default function NewsCard({ title }) {
   return (
     <section className="overflow-hidden">
       {/* Header Section */}
-      <div className="flex justify-between items-center py-2 px-3 border-l-4 border-[#012E48] bg-[#E8EDF0] my-3 sm:my-4">
+      <div className="flex justify-between items-center py-4 px-3 border-l-4 border-[#012E48] bg-[#E8EDF0] my-3 sm:my-4">
         <h2 className="text-base sm:text-lg font-bold text-gray-800">
           {title}
         </h2>
@@ -13,7 +13,7 @@ export default function NewsCard({ title }) {
           className="flex items-center text-[#012E48] text-sm sm:text-md hover:text-gray-700"
         >
           আরও খবর
-          <span className="ml-1 text-lg sm:text-xl -mt-1 transform scale-y-75">
+          <span className="ml-1 text-lg sm:text-xl  transform scale-y-75">
             →
           </span>
         </a>

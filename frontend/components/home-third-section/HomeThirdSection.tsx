@@ -4,7 +4,7 @@ import MiddleNewsCard from "./MiddleNewsCard";
 
 const HomeThirdSection = () => {
   return (
-    <div className="mx-auto max-w-7xl py-2 my-5 px-2 sm:px-4">
+    <div className="mx-auto w-8/12  py-2 my-5 px-2 sm:px-4">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-5 md:gap-6 auto-rows-fr my-6 sm:my-10">
         {/* Left News */}
         <div className="col-span-12 md:col-span-6 lg:col-span-3">

@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import Marquee from "react-fast-marquee";
 
 type FooterProps = {
   notice?: string;
@@ -154,7 +155,13 @@ export default function Footer({
               নোটিশ
             </div>
           </div>
-          <Marquee text={notice} />
+          <Marquee
+            direction="left"
+            pauseOnHover
+            className="whitespace-nowrap py-3 animate-marquee will-change-transform"
+          >
+            {notice}
+          </Marquee>
         </div>
       </div>
 
@@ -169,31 +176,5 @@ export default function Footer({
         </button>
       )}
     </footer>
-  );
-}
-
-function Marquee({ text }: { text: string }) {
-  // Duplicate text for seamless loop
-  const repeated = `${text}   ${text}  ${text}`;
-  return (
-    <div className="overflow-hidden pl-[92px]">
-      {/* left space for the badge */}
-      <div className="whitespace-nowrap py-3 animate-marquee will-change-transform">
-        <span className="inline-block pr-12">{repeated}</span>
-      </div>
-      <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-marquee {
-          animation: marquee 20s linear infinite;
-        }
-      `}</style>
-    </div>
   );
 }

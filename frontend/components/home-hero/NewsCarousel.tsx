@@ -63,7 +63,7 @@ export default function BengaliNewsSlider() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto bg-white border-4">
+    <div className="lg:max-w-4xl mx-auto ">
       {/* Main Slider Container */}
       <div
         className="relative w-full overflow-hidden"
@@ -134,7 +134,7 @@ export default function BengaliNewsSlider() {
       </div>
 
       {/* Dots Pagination */}
-      <div className="flex justify-center space-x-2 py-3 bg-gray-100">
+      <div className="flex justify-center space-x-2 py-3 ">
         {newsSlides.map((_, index) => (
           <button
             key={index}

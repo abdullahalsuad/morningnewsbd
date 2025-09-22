@@ -14,51 +14,58 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import MobileDrawer from "./MobileDrawer";
 
-type NavChild = { label: string };
-type NavItem = { label: string; children?: NavChild[] };
+type NavChild = { label: string; href: string };
+type NavItem = { label: string; href: string; children?: NavChild[] };
 
 const NAV_LINKS: NavItem[] = [
-  { label: "প্রচ্ছদ" },
+  { label: "প্রচ্ছদ", href: "/" },
   {
     label: "জাতীয়",
-    children: [{ label: "অর্থনীতি" }, { label: "দুর্নীতি" }],
+    href: "/politics",
+    children: [
+      { label: "অর্থনীতি", href: "category/politics/economy" },
+      { label: "দুর্নীতি", href: "/politics/corruption" },
+    ],
   },
   {
     label: "রাজনীতি",
+    href: "/government",
     children: [
-      { label: "বিএনপি" },
-      { label: "আওয়ামীলীগ" },
-      { label: "অনন্য" },
-      { label: "বিশেষ প্রতিবেদন" },
+      { label: "বিএনপি", href: "/government/bnp" },
+      { label: "আওয়ামীলীগ", href: "/government/awami-league" },
+      { label: "অনন্য", href: "/government/others" },
+      { label: "বিশেষ প্রতিবেদন", href: "/government/special" },
     ],
   },
   {
     label: "আন্তর্জাতিক",
+    href: "/international",
     children: [
-      { label: "জাতিসংঘ" },
-      { label: "বিশ্ব রাজনীতি" },
-      { label: "সারাবিশ্ব" },
+      { label: "জাতিসংঘ", href: "/international/un" },
+      { label: "বিশ্ব রাজনীতি", href: "/international/world-politics" },
+      { label: "সারাবিশ্ব", href: "/international/global" },
     ],
   },
-  { label: "তথ্য প্রযুক্তি" },
+  { label: "তথ্য প্রযুক্তি", href: "/technology" },
   {
     label: "সারাদেশ",
+    href: "/country",
     children: [
-      { label: "ঢাকা" },
-      { label: "চট্টগ্রাম" },
-      { label: "রাজশাহী" },
-      { label: "খুলনা" },
-      { label: "বরিশাল" },
-      { label: "সিলেট" },
-      { label: "রংপুর" },
-      { label: "ময়মনসিংহ" },
+      { label: "ঢাকা", href: "/country/dhaka" },
+      { label: "চট্টগ্রাম", href: "/country/chittagong" },
+      { label: "রাজশাহী", href: "/country/rajshahi" },
+      { label: "খুলনা", href: "/country/khulna" },
+      { label: "বরিশাল", href: "/country/barishal" },
+      { label: "সিলেট", href: "/country/sylhet" },
+      { label: "রংপুর", href: "/country/rangpur" },
+      { label: "ময়মনসিংহ", href: "/country/mymensingh" },
     ],
   },
-  { label: "ক্যাম্পাস" },
-  { label: "বিনোদন" },
-  { label: "খেলাধুলা" },
-  { label: "মিডিয়া" },
-  { label: "ই-পেপার" },
+  { label: "ক্যাম্পাস", href: "/campus" },
+  { label: "বিনোদন", href: "/entertainment" },
+  { label: "খেলাধুলা", href: "/sports" },
+  { label: "মিডিয়া", href: "/media" },
+  { label: "ই-পেপার", href: "/epaper" },
 ];
 
 export default function NavBar() {
@@ -67,7 +74,7 @@ export default function NavBar() {
 
   return (
     <div className="w-full bg-[#0A4466] text-white sticky top-0 z-40 shadow-sm">
-      <div className="mx-auto max-w-7xl px-4">
+      <div className="mx-auto w-8/12 py-2">
         {/*  BAR  */}
         <div className="flex items-center justify-between h-12">
           {/* Desktop nav */}
@@ -75,7 +82,7 @@ export default function NavBar() {
             {NAV_LINKS.map((item) => {
               const hasChildren = (item.children?.length ?? 0) > 0;
 
-              //  NO CHILDREN
+              // NO CHILDREN
               if (!hasChildren) {
                 const icon =
                   item.label === "প্রচ্ছদ" ? (
@@ -85,27 +92,27 @@ export default function NavBar() {
                   ) : null;
 
                 return (
-                  <div
+                  <Link
                     key={item.label}
-                    className="px-3 flex items-center rounded-md hover:bg-[#093955]/80  select-none cursor-pointer"
+                    href={item.href}
+                    className="px-3 flex items-center rounded-md hover:bg-[#093955]/80 select-none cursor-pointer"
                   >
-                    <span className="inline-flex items-center gap-1 cursor-pointer">
+                    <span className="inline-flex items-center gap-1">
                       {icon}
                       {item.label}
                     </span>
-                  </div>
+                  </Link>
                 );
               }
 
-              //  HAS CHILDREN  DROPDOWN
+              // HAS CHILDREN (Dropdown)
               return (
                 <HoverDropdown key={item.label} label={item.label}>
                   {item.children!.map((c) => (
-                    <DropdownMenuItem
-                      key={c.label}
-                      className="cursor-pointer hover:bg-gray-100 hover:text-white"
-                    >
-                      {c.label}
+                    <DropdownMenuItem key={c.label} asChild>
+                      <Link href={c.href} className="w-full block px-2 py-1">
+                        {c.label}
+                      </Link>
                     </DropdownMenuItem>
                   ))}
                 </HoverDropdown>

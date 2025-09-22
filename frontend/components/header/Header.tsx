@@ -5,16 +5,16 @@ import NavBar from "./Navbar";
 
 const Header = () => {
   return (
-    <>
+    <section>
       {/* thin strip */}
-      <HeaderTop city="ঢাকা" />
+      <HeaderTop />
 
       {/*  logo + banner */}
       <HeaderMain />
 
       {/*  main navigation */}
       <NavBar />
-    </>
+    </section>
   );
 };
 

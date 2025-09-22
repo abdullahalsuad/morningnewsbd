@@ -48,9 +48,9 @@ const CARDS = [
 
 export default function Page() {
   return (
-    <section>
+    <section className="mt-20">
       {/* Main content grid */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto w-8/12 px-4 lg:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* LEFT: Cards (3 columns like screenshot) */}
           <section className="lg:col-span-2">
@@ -126,7 +126,7 @@ export default function Page() {
             </div>
 
             {/* Audio bar */}
-            <div className=" bg-white shadow-sm ring-1 ring-gray-200 p-4">
+            <div className=" bg-white shadow-sm ring-1 ring-gray-200">
               {/* svg */}
               <BangladeshMap />
 
@@ -144,7 +144,7 @@ export default function Page() {
 
             <div className="mt-3">
               <audio controls className="w-full">
-                <source src="" type="audio/mpeg" />
+                <source src="national-anthem" type="audio/mpeg" />
               </audio>
             </div>
           </aside>
