@@ -1,4 +1,5 @@
 import CategoryWrapper from "@/components/category/CategoryWrapper";
+import NoNewsFound from "@/components/category/NoNewsFound";
 import Details from "@/components/details/Details";
 import { notFound } from "next/navigation";
 
@@ -13,7 +14,7 @@ type Post = {
   body?: string;
 };
 
-//  Mock data (no backend needed) 
+//  Mock data (no backend needed)
 const POSTS: Post[] = [
   {
     id: "1",
@@ -53,7 +54,7 @@ const POSTS: Post[] = [
   },
 ];
 
-//  Tiny “data layer” helpers 
+//  Tiny “data layer” helpers
 const uniq = <T,>(arr: T[]) => Array.from(new Set(arr));
 
 async function getPostsByCategory(category: string): Promise<Post[]> {
@@ -81,13 +82,21 @@ async function getPostBySlug(args: {
 }): Promise<Post | null> {
   const { category, postSlug, subCategory } = args;
 
+  // If subCategory is provided
+  if (subCategory) {
+    return (
+      POSTS.find(
+        (p) =>
+          p.category === category &&
+          p.slug === postSlug &&
+          p.subCategory === subCategory
+      ) ?? null
+    );
+  }
+
+  // If no subCategory → just find by category + slug
   return (
-    POSTS.find(
-      (p) =>
-        p.category === category &&
-        p.slug === postSlug &&
-        (subCategory ? p.subCategory === subCategory : !p.subCategory)
-    ) ?? null
+    POSTS.find((p) => p.category === category && p.slug === postSlug) ?? null
   );
 }
 
@@ -102,40 +111,52 @@ export default async function Page({
 }) {
   const { category, slug } = await params;
 
-  console.log(category, slug);
+  //   console.log(category, slug);
 
-  // 0 segments → /[category] → LIST (all posts in category)
+  // 0 segments → /[category] → LIST (all news in category)
   if (!slug) {
     const posts = await getPostsByCategory(category);
-    if (posts.length === 0) notFound();
+    if (posts.length === 0) return <NoNewsFound category={category} />;
+
     //   return <PostList title={titleCase(category)} posts={posts} />;
     return <CategoryWrapper />;
   }
 
-  // 1 segment → could be SUBCATEGORY LIST or POST DETAILS (category-only post)
+  // 1 segment → could be SUBCATEGORY LIST or NEWS DETAILS (category-only post)
   if (slug.length === 1) {
     const [one] = slug;
 
-    // Is it a known subcategory? → LIST
+    // [category]/[subCategory] -> LIST (all news in subCategory)
     const subs = await getSubCategories(category);
+    // console.log("subcategory", subs);
+
     if (subs.includes(one)) {
       const posts = await getPostsBySubCategory(category, one);
-      if (posts.length === 0) notFound();
+      //   console.log("posts subcategory", posts);
+
+      if (posts.length === 0)
+        return <NoNewsFound category={category} subCategory={one} />;
 
       return <CategoryWrapper />;
     }
 
-    // Otherwise treat as a POST in category (no subcategory) → DETAILS
+    // [category]/[news] -> DETAILS (category's news)
+    console.log("slug", one);
     const post = await getPostBySlug({ category, postSlug: one });
-    if (!post) notFound();
+    // console.log("post form category with slug", post);
+
+    if (!post) return <NoNewsFound category={category} subCategory={one} />;
+
     return <Details />;
   }
 
-  // 2 segments → /[category]/[subCategory]/[post] → DETAILS
+  // [category]/[subCategory]/[news] -> DETAILS (subCategory's news)
   if (slug.length === 2) {
     const [subCategory, postSlug] = slug;
     const post = await getPostBySlug({ category, subCategory, postSlug });
-    if (!post) notFound();
+
+    if (!post) return notFound();
+
     return <Details />;
   }
 

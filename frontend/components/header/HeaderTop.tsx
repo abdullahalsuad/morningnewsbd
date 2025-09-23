@@ -23,6 +23,7 @@ export default function HeaderTop() {
         const res = await fetch("https://ipapi.co/json/");
         if (!res.ok) throw new Error("Failed to fetch city");
         const data = await res.json();
+        console.log(data);
 
         if (data.city) {
           const cityMap: Record<string, string> = {
@@ -77,8 +78,6 @@ export default function HeaderTop() {
 
       // get bangla months name
       const getBanglaMonthName = (month: number) => {
-        console.log(month);
-
         const months = [
           "বৈশাখ",
           "জ্যৈষ্ঠ",

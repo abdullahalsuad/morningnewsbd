@@ -1,5 +1,6 @@
 import { Home } from "lucide-react";
 import { IoIosArrowForward } from "react-icons/io";
+import CategoryBreadcrumb from "./CategoryBreadcrumb";
 
 const newsData = [
   {
@@ -25,18 +26,8 @@ const newsData = [
 
 export default function LeftNews() {
   return (
-    <div>
-      <div className="bg-[#F8FEFE] shadow-md border-b-3 border-[#8D0A0A] px-4 py-3 mb-4   flex items-center gap-2 text-[18px] ">
-        <Home className="w-4 h-4 text-[#8D0A0A]" />
-        <span className="text-gray-600">
-          <IoIosArrowForward size={20} className="text-black" />
-        </span>
-        <span className="font-medium">জাতীয়</span>
-        <span className="text-gray-600">
-          <IoIosArrowForward size={20} className="text-black" />
-        </span>
-        <span className="text-gray-800 font-medium">অপরাধ</span>
-      </div>
+    <>
+      <CategoryBreadcrumb />
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {newsData.map((news) => (
@@ -54,6 +45,6 @@ export default function LeftNews() {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }
