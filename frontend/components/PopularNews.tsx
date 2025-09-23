@@ -48,7 +48,7 @@ const CARDS = [
 
 export default function Page() {
   return (
-    <section className="mt-20">
+    <section className="mt-10">
       {/* Main content grid */}
       <div className="mx-auto lg:w-8/12 px-4 lg:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
