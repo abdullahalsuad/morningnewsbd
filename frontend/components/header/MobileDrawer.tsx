@@ -1,10 +1,13 @@
+"use client";
+
 import { LucideHome } from "lucide-react";
 import { useState } from "react";
 import { FiMinus, FiPlus, FiX } from "react-icons/fi";
 import { LuNewspaper } from "react-icons/lu";
+import Link from "next/link";
 
-export type NavChild = { label: string };
-export type NavItem = { label: string; children?: NavChild[] };
+export type NavChild = { label: string; href: string };
+export type NavItem = { label: string; href: string; children?: NavChild[] };
 
 const MobileDrawer = ({
   open,
@@ -67,13 +70,14 @@ const MobileDrawer = ({
 
                 return (
                   <li key={item.label}>
-                    <button
-                      className="w-full text-left px-4 py-3 flex items-center gap-2 hover:bg-white/5"
+                    <Link
+                      href={item.href}
+                      className="w-full  px-4 py-3 flex items-center gap-2 hover:bg-white/5"
                       onClick={onClose}
                     >
                       {icon}
                       <span className="text-[15px]">{item.label}</span>
-                    </button>
+                    </Link>
                   </li>
                 );
               }
@@ -99,12 +103,13 @@ const MobileDrawer = ({
                     <ul className="bg-[#0B2A3A]">
                       {item.children!.map((c) => (
                         <li key={c.label}>
-                          <button
-                            className="w-full text-left pl-7 pr-4 py-3 text-[14px] hover:bg-white/5"
+                          <Link
+                            href={c.href}
+                            className="w-full block pl-7 pr-4 py-3 text-[14px] hover:bg-white/5"
                             onClick={onClose}
                           >
                             {c.label}
-                          </button>
+                          </Link>
                         </li>
                       ))}
                     </ul>

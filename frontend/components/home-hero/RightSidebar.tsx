@@ -16,10 +16,10 @@ export default function RightSidebar() {
 /*  Category card  */
 function CategoryNewsCard() {
   return (
-    <section className="rounded-md border-4 border-[#0E4E73] bg-white shadow-sm overflow-hidden">
+    <section className="rounded-md border-4 border-[#0E4E73] bg-white shadow-sm overflow-hidden my-4">
       {/* Header */}
       <div className="relative h-14  bg-[#E9F2F9] my-2 mx-3">
-        <div className="absolute left-0 top-0 h-full flex items-center gap-2  sm:px-5 bg-[#0E4E73] clip-path-header">
+        <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-2 pr-6  bg-[#0A4466] clip-path-header">
           <span className="inline-flex h-[14px] w-[14px] items-center justify-center">
             <NewspaperIcon size={18} className="text-white" />
           </span>

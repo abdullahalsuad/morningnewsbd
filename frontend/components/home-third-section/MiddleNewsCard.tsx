@@ -98,7 +98,7 @@ export default function MiddleNewsCard() {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 p-4 border border-gray-200 shadow-sm rounded-md">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 p-1 border border-gray-200 shadow-sm rounded-md">
         {newsItems.map((item) => (
           <a
             key={item.id}

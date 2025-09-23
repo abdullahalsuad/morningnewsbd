@@ -147,7 +147,7 @@ export default function RightSidebar() {
       </ul>
 
       <Image
-        className="my-2"
+        className="my-4 lg:my-2"
         alt="thumb"
         width={500}
         height={70}

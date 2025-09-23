@@ -24,7 +24,7 @@ export default function HeroLayout({ items = [] }) {
           </div>
 
           {/*Bottom SMALL POSTS  */}
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pr-5 px-4">
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:pr-5 px-4 lg:px-0">
             <SmallPostCards />
           </div>
         </section>

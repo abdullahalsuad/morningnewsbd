@@ -50,7 +50,7 @@ export default function Page() {
   return (
     <section className="mt-20">
       {/* Main content grid */}
-      <div className="mx-auto w-8/12 px-4 lg:px-0">
+      <div className="mx-auto lg:w-8/12 px-4 lg:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* LEFT: Cards (3 columns like screenshot) */}
           <section className="lg:col-span-2">
