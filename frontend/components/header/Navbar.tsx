@@ -18,27 +18,30 @@ type NavChild = { label: string; href: string };
 type NavItem = { label: string; href: string; children?: NavChild[] };
 
 const NAV_LINKS: NavItem[] = [
-  { label: "প্রচ্ছদ", href: "/" },
+  { label: "প্রচ্ছদ", href: "/" }, 
+
   {
-    label: "জাতীয়",
+    label: "জাতীয়", 
+    href: "/national",
+    children: [
+      { label: "অর্থনীতি", href: "/national/economy" },
+      { label: "দুর্নীতি", href: "/national/corruption" },
+    ],
+  },
+
+  {
+    label: "রাজনীতি", 
     href: "/politics",
     children: [
-      { label: "অর্থনীতি", href: "category/politics/economy" },
-      { label: "দুর্নীতি", href: "/politics/corruption" },
+      { label: "বিএনপি", href: "/politics/bnp" },
+      { label: "আওয়ামীলীগ", href: "/politics/awami-league" },
+      { label: "অনন্য", href: "/politics/others" },
+      { label: "বিশেষ প্রতিবেদন", href: "/politics/special" },
     ],
   },
+
   {
-    label: "রাজনীতি",
-    href: "/government",
-    children: [
-      { label: "বিএনপি", href: "/government/bnp" },
-      { label: "আওয়ামীলীগ", href: "/government/awami-league" },
-      { label: "অনন্য", href: "/government/others" },
-      { label: "বিশেষ প্রতিবেদন", href: "/government/special" },
-    ],
-  },
-  {
-    label: "আন্তর্জাতিক",
+    label: "আন্তর্জাতিক", 
     href: "/international",
     children: [
       { label: "জাতিসংঘ", href: "/international/un" },
@@ -46,9 +49,10 @@ const NAV_LINKS: NavItem[] = [
       { label: "সারাবিশ্ব", href: "/international/global" },
     ],
   },
-  { label: "তথ্য প্রযুক্তি", href: "/technology" },
+
+  { label: "তথ্য প্রযুক্তি", href: "/technology" }, 
   {
-    label: "সারাদেশ",
+    label: "সারাদেশ", // Country
     href: "/country",
     children: [
       { label: "ঢাকা", href: "/country/dhaka" },
@@ -61,11 +65,12 @@ const NAV_LINKS: NavItem[] = [
       { label: "ময়মনসিংহ", href: "/country/mymensingh" },
     ],
   },
-  { label: "ক্যাম্পাস", href: "/campus" },
-  { label: "বিনোদন", href: "/entertainment" },
-  { label: "খেলাধুলা", href: "/sports" },
-  { label: "মিডিয়া", href: "/media" },
-  { label: "ই-পেপার", href: "/epaper" },
+
+  { label: "ক্যাম্পাস", href: "/campus" }, // Campus
+  { label: "বিনোদন", href: "/entertainment" }, // Entertainment
+  { label: "খেলাধুলা", href: "/sports" }, // Sports
+  { label: "মিডিয়া", href: "/media" }, // Media
+  { label: "ই-পেপার", href: "/epaper" }, // E-paper
 ];
 
 export default function NavBar() {

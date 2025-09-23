@@ -120,7 +120,7 @@ export default function NewsTabs() {
         {dataset.map((n, idx) => (
           <li key={n.id} className="relative py-2.5 hover:bg-gray-50 px-4">
             {/* Number Badge */}
-            <span className="absolute -left-3 top-1/2 -translate-y-1/2 grid place-items-center h-10 w-10 rounded-full  bg-gray-900 text-[17px] font-bold text-gray-100 border-4 border-white  ml-3">
+            <span className="absolute -left-3 top-1/2 -translate-y-1/2 grid place-items-center h-9 w-9 rounded-full  bg-gray-300 text-[17px] font-bold text-gray-900 border-4 border-white  ml-3">
               {idx + 1}
             </span>
 
