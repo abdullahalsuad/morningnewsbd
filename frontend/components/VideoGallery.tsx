@@ -69,7 +69,7 @@ const VideoGallery: React.FC = () => {
 
   return (
     <div className="bg-gray-900 py-8 mt-10">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-full xl:max-w-[1200px] 2xl:max-w-[1400px] mx-auto">
         {/* Section Header */}
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-white">ভিডিও গ্যালারী</h2>

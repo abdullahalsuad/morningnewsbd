@@ -48,10 +48,10 @@ export default function RecentlyPublished() {
   ];
 
   return (
-    <section className="mx-auto lg:w-8/12 px-4 lg:px-0">
+    <section className="mx-auto max-w-full xl:max-w-[1200px] 2xl:max-w-[1400px]">
       <hr className="mt-10 border-t-2 border-[#0A4466] my-4 " />
 
-      <div>
+      <div className="px-4">
         <div className="flex items-center justify-between border-b border-gray-300 pb-1 ">
           <h2 className="text-base sm:text-lg font-bold text-gray-900">
             সম্প্রতি প্রকাশিত সংবাদ
@@ -68,7 +68,7 @@ export default function RecentlyPublished() {
         </div>
       </div>
 
-      <div className="my-4">
+      <div className="my-4 px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {posts.map((p) => (
             <article

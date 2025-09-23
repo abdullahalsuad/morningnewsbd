@@ -15,8 +15,8 @@ const HomePageAdsTwo = ({
   alt2 = "ad 2",
 }: HomePageAdsProps) => {
   return (
-    <section className=" mx-auto lg:w-8/12 px-4 lg:px-0">
-      <div className="my-4 grid grid-cols-2 gap-4">
+    <section className=" mx-auto max-w-full xl:max-w-[1200px] 2xl:max-w-[1400px]">
+      <div className="my-4 grid grid-cols-2 gap-4 px-4">
         <Image
           src={src}
           alt={alt1}

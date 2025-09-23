@@ -5,8 +5,8 @@ import Media from "./Media";
 
 export default function Page() {
   return (
-    <section className="mx-auto lg:w-8/12  mb-10 px-4 lg:px-0">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <section className="mx-auto max-w-full xl:max-w-[1200px] 2xl:max-w-[1400px] mb-10 ">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 px-4">
         {/* Left side: PhotoGallery (8/12) */}
         <div className="lg:col-span-8">
           <PhotoGallery

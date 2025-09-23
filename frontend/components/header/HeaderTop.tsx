@@ -118,8 +118,8 @@ export default function HeaderTop() {
   }, []);
 
   return (
-    <div className=" mx-auto lg:w-8/12 px-4 lg:px-0  border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-      <div className="py-4 flex items-center justify-between">
+    <div className=" mx-auto max-w-full xl:max-w-[1200px] 2xl:max-w-[1400px]  border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+      <div className="py-4 flex items-center justify-between px-4 ">
         {/* Left: City + Time */}
         <div className="flex items-center gap-4 text-gray-700 dark:text-gray-300">
           <FaMapMarkerAlt size={20} />

@@ -116,7 +116,7 @@ export default async function Page({
   // 0 segments → /[category] → LIST (all news in category)
   if (!slug) {
     const posts = await getPostsByCategory(category);
-    if (posts.length === 0) return <NoNewsFound category={category} />;
+    if (posts.length === 0) return <NoNewsFound />;
 
     //   return <PostList title={titleCase(category)} posts={posts} />;
     return <CategoryWrapper />;
@@ -134,8 +134,7 @@ export default async function Page({
       const posts = await getPostsBySubCategory(category, one);
       //   console.log("posts subcategory", posts);
 
-      if (posts.length === 0)
-        return <NoNewsFound category={category} subCategory={one} />;
+      if (posts.length === 0) return <NoNewsFound />;
 
       return <CategoryWrapper />;
     }
@@ -145,7 +144,7 @@ export default async function Page({
     const post = await getPostBySlug({ category, postSlug: one });
     // console.log("post form category with slug", post);
 
-    if (!post) return <NoNewsFound category={category} subCategory={one} />;
+    if (!post) return <NoNewsFound />;
 
     return <Details />;
   }

@@ -31,7 +31,7 @@ const Home = () => {
       />
 
       {/* third section */}
-      <div className="bg-[#F6F9F9]">
+      <div className="bg-[#F6F9F9] py-5">
         <HomeThirdSection />
       </div>
 

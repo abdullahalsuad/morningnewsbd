@@ -1,5 +1,3 @@
-import { Home } from "lucide-react";
-import { IoIosArrowForward } from "react-icons/io";
 import CategoryBreadcrumb from "./CategoryBreadcrumb";
 
 const newsData = [

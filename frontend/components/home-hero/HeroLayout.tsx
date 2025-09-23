@@ -6,8 +6,8 @@ import NewsCarousel from "./NewsCarousel";
 
 export default function HeroLayout({ items = [] }) {
   return (
-    <div className="mx-auto lg:w-8/12 my-4">
-      <div className="grid grid-cols-12  isolate">
+    <div className="mx-auto max-w-full xl:max-w-[1200px] 2xl:max-w-[1400px] my-4">
+      <div className="grid grid-cols-12  isolate px-4">
         {/* LEFT  */}
         <section className="col-span-12 lg:col-span-9">
           {/* TOP ROW */}
@@ -24,7 +24,7 @@ export default function HeroLayout({ items = [] }) {
           </div>
 
           {/*Bottom SMALL POSTS  */}
-          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:pr-5 px-4 lg:px-0">
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 lg:pr-5  lg:px-0">
             <SmallPostCards />
           </div>
         </section>

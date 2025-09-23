@@ -1,12 +1,7 @@
 import CategoryBreadcrumb from "./CategoryBreadcrumb";
 import RightSidebar from "./RightSidebar";
 
-type NoNewsFoundProps = {
-  category?: string;
-  subCategory?: string;
-};
-
-const NoNewsFound = ({ category, subCategory }: NoNewsFoundProps) => {
+const NoNewsFound = () => {
   return (
     <section className="mx-auto lg:w-8/12 px-4 lg:px-0 mt-10">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-10">
