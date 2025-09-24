@@ -1,19 +1,15 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+
 import "../globals.css";
-import Navbar from "@/components/header/Navbar";
 import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const SolaimanLipi = localFont({
+  src: "../../public/fonts/SolaimanLipi_Bold.ttf",
+  weight: "400",
+  style: "normal",
 });
 
 export const metadata = {
@@ -23,10 +19,8 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
-      >
+    <html lang="bn" className={SolaimanLipi.className}>
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

@@ -11,37 +11,37 @@ export default function NewsTabs() {
       id: 1,
       title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
-        "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop",
+        "https://morningnewsbd.com/assets/images/post/1737318906kjbfwtFr.jpg",
     },
     {
       id: 2,
       title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
-        "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop",
+        "https://morningnewsbd.com/assets/images/post/1737318906kjbfwtFr.jpg",
     },
     {
       id: 3,
       title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
-        "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop",
+        "https://morningnewsbd.com/assets/images/post/1737318906kjbfwtFr.jpg",
     },
     {
       id: 4,
       title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
-        "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop",
+        "https://morningnewsbd.com/assets/images/post/1737318906kjbfwtFr.jpg",
     },
     {
       id: 5,
       title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
-        "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop",
+        "https://morningnewsbd.com/assets/images/post/1737318906kjbfwtFr.jpg",
     },
     {
       id: 6,
       title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
-        "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop",
+        "https://morningnewsbd.com/assets/images/post/1737318906kjbfwtFr.jpg",
     },
   ];
 
@@ -50,46 +50,46 @@ export default function NewsTabs() {
       id: 1,
       title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
-        "https://morningnewsbd.com/assets/images/post/1737282675ukyMoeTF.jpg",
+        "https://morningnewsbd.com/assets/images/post/1737273934D3RWtJBb.jpg",
     },
     {
       id: 2,
       title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
-        "https://morningnewsbd.com/assets/images/post/1737282675ukyMoeTF.jpg",
+        "https://morningnewsbd.com/assets/images/post/1737273934D3RWtJBb.jpg",
     },
     {
       id: 3,
       title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
-        "https://morningnewsbd.com/assets/images/post/1737282675ukyMoeTF.jpg",
+        "https://morningnewsbd.com/assets/images/post/1737273934D3RWtJBb.jpg",
     },
     {
       id: 4,
       title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
-        "https://morningnewsbd.com/assets/images/post/1737282675ukyMoeTF.jpg",
+        "https://morningnewsbd.com/assets/images/post/1737273934D3RWtJBb.jpg",
     },
     {
       id: 5,
       title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
-        "https://morningnewsbd.com/assets/images/post/1737282675ukyMoeTF.jpg",
+        "https://morningnewsbd.com/assets/images/post/1737273934D3RWtJBb.jpg",
     },
     {
       id: 6,
       title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
-        "https://morningnewsbd.com/assets/images/post/1737282675ukyMoeTF.jpg",
+        "https://morningnewsbd.com/assets/images/post/1737273934D3RWtJBb.jpg",
     },
   ];
 
   const dataset = tab === "latest" ? latestNews : popularNews;
 
   return (
-    <div className="px-5">
+    <div className="pr-4">
       {/* Tabs */}
-      <div className="grid grid-cols-2 text-center border-t-4 border-[#0E4E73] text-[15px] font-semibold">
+      <div className="grid grid-cols-2 text-center border-t-4 border-[#0E4E73] text-[17px] font-semibold">
         <button
           className={`py-2 cursor-pointer ${
             tab === "latest"
@@ -114,7 +114,7 @@ export default function NewsTabs() {
 
       {/* News List */}
       <ul
-        className="divide-y divide-gray-200 max-h-[450px] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:theme(colors.gray.400)_transparent]
+        className="divide-y divide-gray-200 max-h-[400px] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:theme(colors.gray.400)_transparent]
         [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-400"
       >
         {dataset.map((n, idx) => (
@@ -132,12 +132,12 @@ export default function NewsTabs() {
                 alt="thumb"
                 width={100}
                 height={60}
-                className=" object-cover rounded-sm border border-gray-200"
+                className="w-[220px] h-[70px] object-cover  border border-gray-200"
               />
 
               {/* Text */}
               <div className="min-w-0 leading-snug pt-0.5">
-                <h4 className="text-[16px] font-semibold text-gray-900 tracking-tight line-clamp-2">
+                <h4 className="text-[17px] font-semibold text-gray-900  line-clamp-2">
                   {n.title}
                 </h4>
               </div>

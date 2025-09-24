@@ -63,7 +63,7 @@ export default function BengaliNewsSlider() {
   };
 
   return (
-    <div className="lg:max-w-4xl mx-auto ">
+    <div className="lg:max-w-[550px] 2xl:max-w-[580px]">
       {/* Main Slider Container */}
       <div
         className="relative w-full overflow-hidden"
@@ -79,7 +79,7 @@ export default function BengaliNewsSlider() {
             <div key={slide.id} className="w-full flex-shrink-0">
               <div className="relative">
                 {/* Full Image Background */}
-                <div className="aspect-[16/10] relative overflow-hidden">
+                <div className="aspect-[19/10] relative overflow-hidden">
                   <Image
                     height={500}
                     width={500}
@@ -93,7 +93,7 @@ export default function BengaliNewsSlider() {
 
                   {/* Red Title Bar at Bottom */}
                   <div className="absolute bottom-0 left-0 right-0 bg-black/50 px-4 py-3">
-                    <h2 className="text-white font-bold text-xl md:text-2xl leading-tight">
+                    <h2 className="text-white font-bold text-[23px] leading-tight">
                       {slide.mainTitle}
                     </h2>
                   </div>
@@ -101,11 +101,11 @@ export default function BengaliNewsSlider() {
 
                 {/* Description Below Image */}
                 <div className="bg-white p-2">
-                  <p className="text-gray-800 text-sm md:text-base leading-relaxed">
-                    {slide.description}{" "}
+                  <p className="text-gray-800 text-[19px]  leading-relaxed">
+                    {slide.description}
                     <a
                       href="#"
-                      className="text-blue-600 font-semibold hover:underline"
+                      className="text-blue-600 font-semibold hover:underline ml-3"
                     >
                       বিস্তারিত
                     </a>

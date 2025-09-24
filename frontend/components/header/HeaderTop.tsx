@@ -1,16 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { SlCalender } from "react-icons/sl";
+
 import {
   FaFacebookF,
   FaTwitter,
   FaLinkedinIn,
   FaYoutube,
-  FaMapMarkerAlt,
 } from "react-icons/fa";
 import Link from "next/link";
 import { BanglaDate } from "@subrotosaha/bangla-date";
+import { CalendarMinus2, MapPin } from "lucide-react";
 
 export default function HeaderTop() {
   const [city, setCity] = useState("ঢাকা");
@@ -118,14 +118,14 @@ export default function HeaderTop() {
   }, []);
 
   return (
-    <div className=" mx-auto max-w-full xl:max-w-[1200px] 2xl:max-w-[1400px]  border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
-      <div className="py-4 flex items-center justify-between px-4 ">
+    <div className=" mx-auto max-w-full xl:max-w-[1320px] 2xl:max-w-[1400px]  border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+      <div className="py-2 flex items-center justify-between px-4">
         {/* Left: City + Time */}
         <div className="flex items-center gap-4 text-gray-700 dark:text-gray-300">
-          <FaMapMarkerAlt size={20} />
+          <MapPin size={20} />
           <span className="font-medium text-[19px]">{city}</span>
           <span className="hidden sm:inline">
-            <SlCalender size={20} />
+            <CalendarMinus2 size={20} />
           </span>
           <span className="hidden sm:inline font-medium text-[19px]">
             {dateTime}

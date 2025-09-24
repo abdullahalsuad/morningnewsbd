@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HeaderMain() {
   return (
-    <div className="mx-auto max-w-full xl:max-w-[1200px] 2xl:max-w-[1400px] py-4  flex items-center gap-3 ">
+    <div className="mx-auto max-w-full xl:max-w-[1320px] 2xl:max-w-[1400px] py-6  flex items-center gap-3 ">
       {/* Logo */}
       <Link href="/" className="flex items-center px-4 ">
         <Image
@@ -16,7 +16,7 @@ export default function HeaderMain() {
       </Link>
 
       {/* Banner / Ad / CTA area */}
-      <div className="hidden md:block px-4 lg:px-0">
+      <div className="hidden md:block px-4">
         <Image
           src="https://4.bp.blogspot.com/-0vjyWEgMv-I/V1qVpS7vbRI/AAAAAAAAB70/occVjbuxm14nKSpIOmEWh31q-FhJaXSPwCLcB/s1600/16715760738488333078.gif"
           alt="সংবাদ ৭১ বিডি"

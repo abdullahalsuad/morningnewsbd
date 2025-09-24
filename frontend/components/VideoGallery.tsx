@@ -69,7 +69,7 @@ const VideoGallery: React.FC = () => {
 
   return (
     <div className="bg-gray-900 py-8 mt-10">
-      <div className="max-w-full xl:max-w-[1200px] 2xl:max-w-[1400px] mx-auto">
+      <div className="mx-auto max-w-full xl:max-w-[1320px] 2xl:max-w-[1400px]">
         {/* Section Header */}
         <div className="flex items-center justify-between mb-6">
           <h2 className="text-2xl font-bold text-white">ভিডিও গ্যালারী</h2>
@@ -215,11 +215,6 @@ const VideoGallery: React.FC = () => {
                       <h4 className="text-white font-medium  group-hover:text-red-400 transition-colors line-clamp-2">
                         {video.title}
                       </h4>
-                      {video.subtitle && (
-                        <p className="text-gray-400 text-sm mt-1 line-clamp-2">
-                          {video.subtitle}
-                        </p>
-                      )}
                     </div>
                   </div>
                 </SwiperSlide>

@@ -48,7 +48,7 @@ export default function RecentlyPublished() {
   ];
 
   return (
-    <section className="mx-auto max-w-full xl:max-w-[1200px] 2xl:max-w-[1400px]">
+    <section className="mx-auto max-w-full xl:max-w-[1320px] 2xl:max-w-[1400px]">
       <hr className="mt-10 border-t-2 border-[#0A4466] my-4 " />
 
       <div className="px-4">

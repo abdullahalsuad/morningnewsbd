@@ -48,7 +48,7 @@ const CARDS = [
 
 export default function Page() {
   return (
-    <div className="mx-auto max-w-full xl:max-w-[1200px] 2xl:max-w-[1400px] mt-10">
+    <div className="mx-auto max-w-full xl:max-w-[1320px] 2xl:max-w-[1400px] mt-10">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 px-4">
         {/* LEFT: Cards (3 columns like screenshot) */}
         <section className="lg:col-span-2">

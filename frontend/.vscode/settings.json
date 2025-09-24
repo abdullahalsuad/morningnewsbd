@@ -42,7 +42,8 @@
     "পৌষ",
     "মাঘ",
     "ফাল্গুন",
-    "চৈত্র"
+    "চৈত্র",
+    "SolaimanLipi"
   ],
   "postman.settings.dotenv-detection-notification-visibility": false
 }

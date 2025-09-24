@@ -5,8 +5,9 @@ import SmallPostCards from "./SmallPostCards";
 import NewsCarousel from "./NewsCarousel";
 
 export default function HeroLayout({ items = [] }) {
+  // xl:max-w-[1200px] 2xl:max-w-[1400px]
   return (
-    <div className="mx-auto max-w-full xl:max-w-[1200px] 2xl:max-w-[1400px] my-4">
+    <div className="mx-auto max-w-full  my-4 xl:max-w-[1320px] 2xl:max-w-[1400px]">
       <div className="grid grid-cols-12  isolate px-4">
         {/* LEFT  */}
         <section className="col-span-12 lg:col-span-9">

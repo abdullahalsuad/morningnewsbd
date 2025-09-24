@@ -32,7 +32,7 @@ export default async function SmallPostCards() {
             </div>
           </div>
 
-          <button className="px-3 py-3 text-base sm:text-[17px] leading-6 font-semibold text-gray-900 cursor-pointer">
+          <button className="px-3 py-3 text-[20px] leading-6 font-semibold text-gray-900 cursor-pointer text-left">
             <Link href={`/${p._id}`}>{p.title}</Link>
           </button>
         </article>

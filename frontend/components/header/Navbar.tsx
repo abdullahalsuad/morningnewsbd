@@ -1,17 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { LucideHome } from "lucide-react";
 import { FiMenu, FiSearch, FiChevronDown } from "react-icons/fi";
 import { LuNewspaper } from "react-icons/lu";
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem,
-} from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import MobileDrawer from "./MobileDrawer";
 
 type NavChild = { label: string; href: string };
@@ -71,14 +66,25 @@ const NAV_LINKS: NavItem[] = [
 export default function NavBar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+  const pathname = usePathname();
+
+  // Check if current path matches nav item
+  const isActive = (href: string, children?: NavChild[]) => {
+    if (pathname === href) return true;
+    if (children) {
+      return children.some((child) => pathname === child.href);
+    }
+    return false;
+  };
 
   return (
     <div className="w-full bg-[#0A4466] text-white sticky top-0 z-40 shadow-sm">
-      <div className="mx-auto px-4  py-2 max-w-full xl:max-w-[1200px] 2xl:max-w-[1400px]">
-        <div className="flex items-center justify-between h-12">
+      <div className="mx-auto px-4  max-w-full xl:max-w-[1320px] 2xl:max-w-[1400px]">
+        <div className="flex items-center justify-between ">
           <nav className="hidden xl:flex items-stretch gap-0 flex-1">
             {NAV_LINKS.map((item) => {
               const hasChildren = (item.children?.length ?? 0) > 0;
+              const active = isActive(item.href, item.children);
 
               // Items without children
               if (!hasChildren) {
@@ -93,7 +99,11 @@ export default function NavBar() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="px-2 xl:px-3 flex items-center rounded-md hover:bg-[#093955]/80 select-none cursor-pointer text-sm xl:text-base whitespace-nowrap"
+                    className={`px-2 xl:px-5 py-3.4 flex items-center select-none cursor-pointer text-sm xl:text-base whitespace-nowrap transition-all duration-200 ${
+                      active
+                        ? "bg-[#012E48] text-white"
+                        : "hover:bg-[#093955]/80"
+                    }`}
                   >
                     <span className="inline-flex items-center gap-1">
                       {icon}
@@ -105,15 +115,24 @@ export default function NavBar() {
 
               // Items with dropdown children
               return (
-                <HoverDropdown key={item.label} label={item.label}>
+                <SmoothHoverDropdown
+                  key={item.label}
+                  label={item.label}
+                  href={item.href}
+                  active={active}
+                >
                   {item.children!.map((c) => (
-                    <DropdownMenuItem key={c.label} asChild>
-                      <Link href={c.href} className="w-full block px-2 py-1">
-                        {c.label}
-                      </Link>
-                    </DropdownMenuItem>
+                    <Link
+                      key={c.label}
+                      href={c.href}
+                      className={`w-full block px-4 py-2.5 hover:bg-[#093955]/20 transition-colors duration-150 ${
+                        pathname === c.href ? "bg-[#093955]/30 font-medium" : ""
+                      }`}
+                    >
+                      {c.label}
+                    </Link>
                   ))}
-                </HoverDropdown>
+                </SmoothHoverDropdown>
               );
             })}
           </nav>
@@ -122,6 +141,7 @@ export default function NavBar() {
           <nav className="hidden lg:flex xl:hidden items-stretch gap-0 flex-1">
             {NAV_LINKS.slice(0, 6).map((item) => {
               const hasChildren = (item.children?.length ?? 0) > 0;
+              const active = isActive(item.href, item.children);
 
               if (!hasChildren) {
                 const icon =
@@ -135,7 +155,11 @@ export default function NavBar() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="px-2 flex items-center rounded-md hover:bg-[#093955]/80 select-none cursor-pointer text-sm whitespace-nowrap"
+                    className={`px-2 flex items-center select-none cursor-pointer text-sm whitespace-nowrap transition-all duration-200 ${
+                      active
+                        ? "bg-[#012E48] text-white"
+                        : "hover:bg-[#093955]/80"
+                    }`}
                   >
                     <span className="inline-flex items-center gap-1">
                       {icon}
@@ -146,33 +170,46 @@ export default function NavBar() {
               }
 
               return (
-                <HoverDropdown key={item.label} label={item.label}>
+                <SmoothHoverDropdown
+                  key={item.label}
+                  label={item.label}
+                  href={item.href}
+                  active={active}
+                >
                   {item.children!.map((c) => (
-                    <DropdownMenuItem key={c.label} asChild>
-                      <Link href={c.href} className="w-full block px-2 py-1">
-                        {c.label}
-                      </Link>
-                    </DropdownMenuItem>
+                    <Link
+                      key={c.label}
+                      href={c.href}
+                      className={`w-full block px-4 py-2.5 hover:bg-[#093955]/20 transition-colors duration-150 ${
+                        pathname === c.href ? "bg-[#093955]/30 font-medium" : ""
+                      }`}
+                    >
+                      {c.label}
+                    </Link>
                   ))}
-                </HoverDropdown>
+                </SmoothHoverDropdown>
               );
             })}
 
             {/* More dropdown for remaining items */}
-            <HoverDropdown label="আরও">
+            <SmoothHoverDropdown label="আরও" href="#" active={false}>
               {NAV_LINKS.slice(6).map((item) => (
-                <DropdownMenuItem key={item.label} asChild>
-                  <Link href={item.href} className="w-full block px-2 py-1">
-                    {item.label}
-                  </Link>
-                </DropdownMenuItem>
+                <Link
+                  key={item.label}
+                  href={item.href}
+                  className={`w-full block px-4 py-2.5 hover:bg-[#093955]/20 transition-colors duration-150 ${
+                    pathname === item.href ? "bg-[#093955]/30 font-medium" : ""
+                  }`}
+                >
+                  {item.label}
+                </Link>
               ))}
-            </HoverDropdown>
+            </SmoothHoverDropdown>
           </nav>
 
           {/* Mobile hamburger menu */}
           <button
-            className="lg:hidden p-2 -ml-2 hover:bg-[#093955] rounded-md"
+            className="lg:hidden p-2 -ml-2 hover:bg-[#093955] rounded-md transition-colors duration-200"
             onClick={() => setMobileOpen(true)}
             aria-label="Open menu"
           >
@@ -182,7 +219,7 @@ export default function NavBar() {
           {/* Search button */}
           <button
             onClick={() => setShowSearch((s) => !s)}
-            className="p-2 rounded-md hover:bg-[#093955] ml-auto lg:ml-0"
+            className="p-2 rounded-md hover:bg-[#093955] ml-auto lg:ml-0 transition-colors duration-200"
             aria-label="Toggle search"
           >
             <FiSearch size={18} />
@@ -190,24 +227,26 @@ export default function NavBar() {
         </div>
 
         {/* Collapsible search bar */}
-        {showSearch && (
-          <div className="pb-3">
-            <div className="flex items-center gap-2">
-              <input
-                type="text"
-                placeholder="খুঁজুন…"
-                className="w-full rounded-md border border-transparent bg-white/95 text-gray-800 placeholder-gray-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-white text-sm"
-              />
-              <Button
-                type="button"
-                variant="secondary"
-                className="bg-white text-[#0A4466] hover:bg-gray-100 text-sm px-4 py-2 whitespace-nowrap"
-              >
-                Search
-              </Button>
-            </div>
+        <div
+          className={`overflow-hidden transition-all duration-300 ease-in-out ${
+            showSearch ? "max-h-20 opacity-100 pb-3" : "max-h-0 opacity-0"
+          }`}
+        >
+          <div className="flex items-center gap-2 pt-3">
+            <input
+              type="text"
+              placeholder="খুঁজুন…"
+              className="w-full rounded-md border border-transparent bg-white/95 text-gray-800 placeholder-gray-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-white text-sm transition-all duration-200"
+            />
+            <Button
+              type="button"
+              variant="secondary"
+              className="bg-white text-[#0A4466] hover:bg-gray-100 text-sm px-4 py-2 whitespace-nowrap transition-colors duration-200"
+            >
+              Search
+            </Button>
           </div>
-        )}
+        </div>
       </div>
 
       {/* Mobile Drawer */}
@@ -220,43 +259,73 @@ export default function NavBar() {
   );
 }
 
-/* Reusable Hover Dropdown Component */
-function HoverDropdown({
+/* Enhanced Smooth Hover Dropdown Component */
+function SmoothHoverDropdown({
   label,
+  href,
   children,
+  active,
 }: {
   label: string;
+  href: string;
   children: React.ReactNode;
+  active: boolean;
 }) {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 150); // Small delay before closing
+  };
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
-    <DropdownMenu open={open} onOpenChange={setOpen}>
-      <div
-        onMouseEnter={() => setOpen(true)}
-        onMouseLeave={() => setOpen(false)}
+    <div
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <Link
+        href={href}
+        className={`px-2 xl:px-3 h-12 text-white inline-flex items-center gap-1 cursor-pointer text-sm xl:text-base whitespace-nowrap transition-all duration-200 ${
+          active ? "bg-[#012E48] text-white" : "hover:bg-[#093955]/80"
+        }`}
       >
-        <DropdownMenuTrigger asChild>
-          <Button
-            variant="ghost"
-            className="px-2 xl:px-3 h-12 text-white hover:bg-[#093955]/80 inline-flex items-center gap-1 cursor-pointer text-sm xl:text-base whitespace-nowrap"
-          >
-            {label}
-            <FiChevronDown
-              size={14}
-              className={`transition-transform cursor-pointer ${
-                open ? "rotate-180" : "rotate-0"
-              }`}
-            />
-          </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent
-          align="start"
-          className="w-56 bg-white text-gray-900 cursor-pointer"
-        >
-          {children}
-        </DropdownMenuContent>
+        {label}
+        <FiChevronDown
+          size={14}
+          className={`transition-transform duration-200 ease-in-out ${
+            isOpen ? "rotate-180" : "rotate-0"
+          }`}
+        />
+      </Link>
+
+      {/* Custom dropdown with smooth animations */}
+      <div
+        className={`absolute top-full left-0 mt-0 w-56 bg-[#0A4466] text-white rounded-sm shadow-lg z-50 transition-all duration-200 ease-in-out origin-top ${
+          isOpen
+            ? "opacity-100 scale-100 translate-y-0 visible"
+            : "opacity-0 scale-95 -translate-y-2 invisible"
+        }`}
+      >
+        <div className="py-2">{children}</div>
       </div>
-    </DropdownMenu>
+    </div>
   );
 }
