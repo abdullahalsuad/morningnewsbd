@@ -49,7 +49,7 @@ const MoreNationalNews = () => {
           এ জাতীয় আরো খবর
         </h3>
       </div>
-      <div className=" bg-white p-4 mb-10">
+      <div className=" bg-white px-2 py-2 mb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 ">
           {articles.map((article) => (
             <div key={article.id} className="cursor-pointer">

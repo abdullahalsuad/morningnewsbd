@@ -30,24 +30,22 @@ const LeftSidebar = () => {
   ];
 
   return (
-    <div className="bg-white  px-2 shadow-sm">
+    <div className="bg-white  px-2 py-2 shadow-sm">
       {/* Section Heading */}
-      <h3 className="text-lg py-4 px-2 font-semibold text-gray-800 mb-4 pb-2 ">
-        সর্বশেষ সংবাদ
-      </h3>
+      <h3 className="text-lg  px-2 font-extrabold   pb-2 ">সর্বশেষ সংবাদ</h3>
 
       {/* News List */}
       <div className="space-y-4">
         {sidebarNews.map((item) => (
           <div
             key={item.id}
-            className="pb-4 border-b border-gray-200 last:border-b-0 cursor-pointer hover:bg-gray-50 transition-colors duration-200"
+            className="pb-4  cursor-pointer   duration-200 bg-[#F9FAFB]"
           >
             {/* Image on Top */}
             <Image width={500} height={500} src={item.image} alt={item.title} />
 
             {/* Title Below */}
-            <p className="mt-2 text-md font-black text-gray-900 leading-snug hover:text-blue-900 transition-colors">
+            <p className="mt-2 pl-2 text-md font-black text-gray-900 leading-snug hover:text-blue-900 transition-colors">
               {item.title}
             </p>
           </div>

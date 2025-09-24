@@ -26,7 +26,7 @@ const MainContent = () => {
     <section>
       <Breadcrumb />
 
-      <div className="bg-white  p-6 shadow-sm">
+      <div className="bg-white  p-4 shadow-sm">
         <article>
           <h1 className="text-3xl font-bold text-gray-900 mb-4 leading-tight">
             অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সংবাদিকদের প্রবেশ

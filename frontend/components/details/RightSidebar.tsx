@@ -38,9 +38,9 @@ const RightSidebar = () => {
   ];
 
   return (
-    <div className="bg-white  p-2 shadow-sm">
+    <div className="bg-white  p-2 pb-4 shadow-sm">
       {/* Section Heading */}
-      <h3 className="text-lg py-4 px-2 font-semibold text-gray-800 mb-4 pb-2 ">
+      <h3 className="text-[22px]  px-2 font-semibold text-gray-800 mb-4 pb-2 ">
         আলোচিত সংবাদ
       </h3>
 
@@ -72,7 +72,7 @@ const RightSidebar = () => {
                 height={500}
                 src={article.image}
                 alt={article.title}
-                className="w-full h-24 object-cover rounded"
+                className="w-full h-24 object-cover"
               />
               <p className="mt-2 text-md font-black text-gray-900 hover:text-blue-900 leading-snug">
                 {article.title}

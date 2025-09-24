@@ -9,37 +9,37 @@ export default function RightSidebar() {
   const latestNews = [
     {
       id: 1,
-      title: "রিকশাচালককে গুলি করে হত্যা মামলায় কারাগারে চিকিৎসকসহ পাঁচজন",
+      title: "রিকশাচালককে গুলি করে হত্যা মামলায় কারাগারে চিকিৎসকসহ পাঁচজন",
       thumb:
         "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop",
     },
     {
       id: 2,
-      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
+      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
         "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop",
     },
     {
       id: 3,
-      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
+      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
         "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop",
     },
     {
       id: 4,
-      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
+      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
         "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop",
     },
     {
       id: 5,
-      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
+      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
         "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop",
     },
     {
       id: 6,
-      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
+      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
         "https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=400&auto=format&fit=crop",
     },
@@ -48,37 +48,37 @@ export default function RightSidebar() {
   const popularNews = [
     {
       id: 1,
-      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
+      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
         "https://morningnewsbd.com/assets/images/post/1737282675ukyMoeTF.jpg",
     },
     {
       id: 2,
-      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
+      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
         "https://morningnewsbd.com/assets/images/post/1737282675ukyMoeTF.jpg",
     },
     {
       id: 3,
-      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
+      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
         "https://morningnewsbd.com/assets/images/post/1737282675ukyMoeTF.jpg",
     },
     {
       id: 4,
-      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
+      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
         "https://morningnewsbd.com/assets/images/post/1737282675ukyMoeTF.jpg",
     },
     {
       id: 5,
-      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
+      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
         "https://morningnewsbd.com/assets/images/post/1737282675ukyMoeTF.jpg",
     },
     {
       id: 6,
-      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
+      title: "অগ্নিকাণ্ডের ৫ দিন পর সচিবালয়ে সাংবাদিকদের প্রবেশ",
       thumb:
         "https://morningnewsbd.com/assets/images/post/1737282675ukyMoeTF.jpg",
     },
@@ -114,30 +114,38 @@ export default function RightSidebar() {
 
       {/* News List */}
       <ul
-        className="divide-y divide-gray-200 max-h-[450px] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:theme(colors.gray.400)_transparent]
+        className="divide-y divide-gray-200 max-h-[400px] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:theme(colors.gray.400)_transparent]
         [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-400"
       >
         {dataset.map((n, idx) => (
           <li key={n.id} className="relative py-2.5 hover:bg-gray-50 px-4">
             {/* Number Badge */}
-            <span className="absolute -left-3 top-1/2 -translate-y-1/2 grid place-items-center h-10 w-10 rounded-full  bg-gray-900 text-[17px] font-bold text-gray-100 border-4 border-white  ml-3">
+            <span className="absolute -left-3 top-1/2 -translate-y-1/2 grid place-items-center h-9 w-9 rounded-full  bg-gray-900 text-[15px] font-bold text-gray-100 border-4 border-white  ml-3">
               {idx + 1}
             </span>
 
             {/* News Item */}
             <a href="#" className="flex items-start gap-3">
-              {/* Thumbnail */}
               <Image
                 src={n.thumb}
                 alt="thumb"
-                width={120}
-                height={70}
-                className=" object-cover rounded-sm border border-gray-200"
+                unoptimized
+                width={200}
+                height={80}
+                style={{
+                  width: "160px",
+                  height: "80px",
+                  objectFit: "cover",
+                  minWidth: "160px",
+                  minHeight: "80px",
+                  maxWidth: "160px",
+                  maxHeight: "80px",
+                }}
               />
 
               {/* Text */}
-              <div className="min-w-0 leading-snug pt-0.5">
-                <h4 className="text-[17px] font-medium text-gray-900 tracking-tight ">
+              <div className="min-w-0 leading-snug pt-0.5 ">
+                <h4 className="text-[17px] font-medium  text-gray-900 tracking-wide ">
                   {n.title}
                 </h4>
               </div>

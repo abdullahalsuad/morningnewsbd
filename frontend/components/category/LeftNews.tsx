@@ -30,13 +30,13 @@ export default function LeftNews() {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         {newsData.map((news) => (
           <div key={news.id} className="bg-white shadow  overflow-hidden ">
-            <img src={news.img} alt="" className="w-full h-48 object-cover" />
+            <img src={news.img} alt="" className="w-full h-36 object-cover" />
             <div className="px-2 py-2">
               <h3 className="font-medium text-gray-800 text-[20px] mb-2 line-clamp-2">
                 {news.title}
               </h3>
               <hr />
-              <p className="text-[12px] text-gray-500 py-2  ">
+              <p className="text-[12px] text-gray-500 pt-1">
                 প্রকাশের তারিখঃ {news.date}
               </p>
             </div>

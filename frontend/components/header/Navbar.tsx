@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import MobileDrawer from "./MobileDrawer";
+import { FaCaretDown } from "react-icons/fa";
 
 type NavChild = { label: string; href: string };
 type NavItem = { label: string; href: string; children?: NavChild[] };
@@ -308,9 +309,9 @@ function SmoothHoverDropdown({
         }`}
       >
         {label}
-        <FiChevronDown
-          size={14}
-          className={`transition-transform duration-200 ease-in-out ${
+        <FaCaretDown
+          size={20}
+          className={`ml-4 transition-transform duration-200 ease-in-out ${
             isOpen ? "rotate-180" : "rotate-0"
           }`}
         />
@@ -318,7 +319,7 @@ function SmoothHoverDropdown({
 
       {/* Custom dropdown with smooth animations */}
       <div
-        className={`absolute top-full left-0 mt-0 w-56 bg-[#0A4466] text-white rounded-sm shadow-lg z-50 transition-all duration-200 ease-in-out origin-top ${
+        className={`absolute top-full left-0 mt-0 w-56 bg-[#0A4466] text-white  shadow-lg z-50 transition-all duration-200 ease-in-out origin-top ${
           isOpen
             ? "opacity-100 scale-100 translate-y-0 visible"
             : "opacity-0 scale-95 -translate-y-2 invisible"
