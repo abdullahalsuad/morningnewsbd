@@ -86,30 +86,29 @@ export default function MiddleNewsCard() {
   return (
     <section className="overflow-hidden">
       {/* Header */}
-      <div className="flex justify-between items-center py-4 px-3 border-l-4 border-[#012E48] bg-[#E8EDF0] my-4">
+      <div className="flex justify-between items-center py-3 px-3 border-l-4 border-[#012E48] bg-[#E8EDF0] my-4">
         <h2 className="text-lg font-bold text-gray-800">মিডিয়া</h2>
-        <a
-          href="#"
-          className="flex items-center text-[#012E48] text-md hover:text-gray-700"
-        >
+        <a href="#" className="flex items-center text-[#012E48] text-[18px]">
           আরও খবর
-          <span className="ml-1 text-xl  transform scale-y-75">→</span>
+          <span className="ml-1 text-lg sm:text-xl  transform scale-y-75">
+            →
+          </span>
         </a>
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 p-1 border border-gray-200 shadow-sm rounded-md">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 p-1 border border-gray-200 shadow-sm ">
         {newsItems.map((item) => (
           <a
             key={item.id}
             href={item.href || "#"}
             className="group flex items-center gap-2"
           >
-            <div className="rounded-sm overflow-hidden border border-gray-200 bg-gray-100">
+            <div className=" overflow-hidden border border-gray-200 bg-gray-100">
               <Image src={item.image} alt={item.alt} height={130} width={130} />
             </div>
 
-            <p className="flex-1 text-[15px] leading-5 text-gray-900 group-hover:text-sky-700 line-clamp-3">
+            <p className="flex-1 text-[17px] leading-5 text-gray-900 group-hover:text-sky-700 line-clamp-3">
               {item.text}
             </p>
           </a>

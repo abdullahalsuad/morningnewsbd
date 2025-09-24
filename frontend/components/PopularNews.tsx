@@ -1,5 +1,7 @@
 "use client";
-import { Map, MapPin, Volume2Icon } from "lucide-react";
+
+import { AiOutlineTags } from "react-icons/ai";
+import { MapPin, Volume2Icon } from "lucide-react";
 import Image from "next/image";
 import BangladeshMap from "./BangladeshMap";
 
@@ -54,15 +56,15 @@ export default function Page() {
         <section className="lg:col-span-2">
           {/* Header Section */}
           <div className="relative h-12 bg-[#E9F2F9] my-4">
-            <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-5 bg-[#0E4E73] clip-path-header">
-              <span className="text-white text-[15px] font-semibold">
+            <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-2 pr-6 bg-[#0E4E73] clip-path-header">
+              <span className="text-white text-[18px]  font-semibold">
                 জনপ্রিয় সংবাদ সমূহ
               </span>
             </div>
 
             <a
               href="#"
-              className="absolute inset-y-0 right-3 flex items-center gap-1 text-[14px] font-semibold text-[#0E4E73]"
+              className="absolute inset-y-0 right-3 flex items-center gap-1 text-[18px]  text-[#0E4E73]"
             >
               আরও খবর
               <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
@@ -85,12 +87,12 @@ export default function Page() {
                   />
                 </div>
                 <div className="p-4">
-                  <h3 className="text-[15px] font-semibold leading-snug text-gray-900 line-clamp-2 mb-1">
+                  <h3 className="text-[19px] font-semibold leading-snug text-gray-900 line-clamp-2 mb-1">
                     {c.title}
                   </h3>
                   <hr />
                   <div className="mt-3 flex items-center gap-2 text-xs text-gray-500">
-                    <span className="inline-block h-2 w-2 rounded-sm bg-gray-300" />
+                    <AiOutlineTags />
                     <span>প্রকাশের তারিখঃ {c.date} ঃ ইং</span>
                   </div>
                 </div>
@@ -103,24 +105,14 @@ export default function Page() {
         <aside className="lg:col-span-1 space-y-6">
           {/* Header Section */}
           <div className="relative h-12 bg-[#E9F2F9] mt-4">
-            <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-5 bg-[#0E4E73] clip-path-header">
+            <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-2 pr-6 bg-[#0E4E73] clip-path-header">
               <span className="inline-flex items-center justify-center">
                 <MapPin size={20} className="text-white" />
               </span>
-              <span className="text-white text-[15px] font-semibold">
+              <span className="text-white text-[18px] font-semibold">
                 এক নজরে বাংলাদেশ
               </span>
             </div>
-
-            <a
-              href="#"
-              className="absolute inset-y-0 right-3 flex items-center gap-1 text-[14px] font-semibold text-[#0E4E73]"
-            >
-              আরও খবর
-              <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
-                <path d="M8 5l8 7-8 7z" />
-              </svg>
-            </a>
           </div>
 
           {/* Audio bar */}
@@ -129,11 +121,11 @@ export default function Page() {
             <BangladeshMap />
 
             <div className="relative h-12 bg-[#E9F2F9] mt-4">
-              <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-5 bg-[#0E4E73] clip-path-header">
+              <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-2 pr-6 bg-[#0E4E73] clip-path-header">
                 <span className="inline-flex items-center justify-center">
                   <Volume2Icon size={20} className="text-white" />
                 </span>
-                <span className="text-white text-[15px] font-semibold mr-4">
+                <span className="text-white text-[18px] font-semibold mr-4">
                   আমাদের জাতীয় সঙ্গীত
                 </span>
               </div>

@@ -23,11 +23,11 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
   return (
     <div className="w-full">
       <div className="relative h-12 bg-[#E9F2F9] my-4">
-        <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-5 bg-[#0E4E73] clip-path-header">
+        <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-2 pr-6 bg-[#0E4E73] clip-path-header">
           <span className="inline-flex items-center justify-center">
             <Camera size={20} className="text-white" />
           </span>
-          <span className="text-white text-[15px] font-semibold">
+          <span className="text-white text-[18px] font-semibold">
             ফটোগ্যালারী
           </span>
         </div>
@@ -45,7 +45,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ images }) => {
         navigation
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2 rounded-lg overflow-hidden"
+        className="mySwiper2  overflow-hidden"
       >
         {images.map((src, idx) => (
           <SwiperSlide key={idx}>

@@ -46,14 +46,15 @@ export default function Media() {
   return (
     <section>
       {/* Header */}
-      <div className="relative h-12 bg-[#E9F2F9] flex items-center justify-between my-4">
-        <div className="absolute left-0 top-0 h-full flex items-center gap-2 px-4 bg-[#0E4E73] clip-path-header">
+      <div className="h-12 bg-[#E9F2F9] flex items-center justify-between my-4">
+        <div className="flex items-center gap-2 px-3 pr-6 h-full bg-[#0E4E73] clip-path-header">
           <Newspaper size={18} className="text-white" />
           <span className="text-white text-sm font-semibold">মিডিয়া</span>
         </div>
+
         <a
           href="#"
-          className="flex items-center gap-1 pr-3 text-sm font-semibold text-[#0E4E73]"
+          className="flex items-center gap-1 pr-3 text-[18px] text-[#0E4E73]"
         >
           আরও খবর
           <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
@@ -62,28 +63,40 @@ export default function Media() {
         </a>
       </div>
 
-      <div className="border border-gray-100 rounded-md bg-white shadow-sm">
+      <div className="border border-gray-100  bg-white shadow-sm">
         <ul className="divide-y divide-gray-200">
           {items.map((item) => (
-            <li key={item.id} className="flex gap-3 p-1 hover:bg-gray-50">
-              <div className="relative w-20 h-14 flex-shrink-0 rounded-sm overflow-hidden">
+            <li
+              key={item.id}
+              className="flex gap-3 p-1 py-1.5 hover:bg-gray-50"
+            >
+              <div className="relative  flex-shrink-0  overflow-hidden">
                 <Image
                   src={item.img}
                   alt={item.title}
-                  fill
-                  className="object-cover"
+                  width={150}
+                  height={70}
+                  style={{
+                    width: "150",
+                    height: "80px",
+                    objectFit: "cover",
+                    minWidth: "150px",
+                    minHeight: "80px",
+                    maxWidth: "150px",
+                    maxHeight: "80px",
+                  }}
                 />
               </div>
-              <p className="text-md">{item.title}</p>
+              <p className="text-[18px]">{item.title}</p>
             </li>
           ))}
         </ul>
 
         <hr />
-        <div className="flex justify-end p-2">
+        <div className="flex justify-end p-3">
           <a
             href="#"
-            className="flex items-center gap-1 text-sm font-semibold text-[#0E4E73]"
+            className="flex items-center gap-1 text-[15px] text-[#0E4E73]"
           >
             আরও খবর
             <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">

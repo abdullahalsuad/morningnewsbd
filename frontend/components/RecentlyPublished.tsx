@@ -49,16 +49,14 @@ export default function RecentlyPublished() {
 
   return (
     <section className="mx-auto max-w-full xl:max-w-[1320px] 2xl:max-w-[1400px]">
-      <hr className="mt-10 border-t-2 border-[#0A4466] my-4 " />
+      <hr className="mt-10 border-t-2 border-[#0A4466] my-4 mx-4" />
 
       <div className="px-4">
         <div className="flex items-center justify-between border-b border-gray-300 pb-1 ">
-          <h2 className="text-base sm:text-lg font-bold text-gray-900">
-            সম্প্রতি প্রকাশিত সংবাদ
-          </h2>
+          <h2 className="text-[20px] text-gray-900">সম্প্রতি প্রকাশিত সংবাদ</h2>
           <a
             href="#"
-            className="inline-flex items-center gap-1 text-sm sm:text-base font-semibold text-[#0E4E73] hover:text-[#083248]"
+            className="inline-flex items-center gap-1 text-[18px] text-[#0E4E73] hover:text-[#083248]"
           >
             আরও খবর
             <svg viewBox="0 0 24 24" className="h-4 w-4 fill-current">
@@ -83,7 +81,7 @@ export default function RecentlyPublished() {
                   className="object-cover"
                 />
                 <div className="absolute bottom-0 left-0 right-0 bg-black/50 p-2">
-                  <h3 className="text-[13px] sm:text-[14px] font-semibold leading-snug text-white line-clamp-2">
+                  <h3 className="text-[19px]  leading-snug text-white line-clamp-2">
                     {p.title}
                   </h3>
                 </div>
