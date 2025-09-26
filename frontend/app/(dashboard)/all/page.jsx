@@ -1,5 +1,5 @@
+import AllNews from "@/components/dashboard/AllNews";
 import React from "react";
-import AllNews from "../../../components/dashboard/AllNews";
 
 const page = () => {
   return (

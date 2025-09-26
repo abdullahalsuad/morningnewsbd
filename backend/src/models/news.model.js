@@ -19,11 +19,11 @@ const newsSchema = new mongoose.Schema(
     },
 
     author: {
-      name: {
+      userId: {
         type: String,
         trim: true,
       },
-      phone: {
+      name: {
         type: String,
         trim: true,
       },

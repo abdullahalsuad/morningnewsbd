@@ -14,8 +14,8 @@ export default function DashboardLayout({
   // lock body scroll when drawer is open
   useEffect(() => {
     if (open)
-      document.body.classList.add("overflow-hidden", "md:overflow-auto");
-    else document.body.classList.remove("overflow-hidden", "md:overflow-auto");
+      document.body.classList.add("overflow-hidden", "lg:overflow-auto");
+    else document.body.classList.remove("overflow-hidden", "lg:overflow-auto");
   }, [open]);
 
   const close = useCallback(() => setOpen(false), []);
@@ -31,15 +31,15 @@ export default function DashboardLayout({
 
   return (
     <div className="flex min-h-screen bg-gray-50 text-gray-800">
-      {/* Desktop sidebar (sticky) */}
-      <aside className="hidden md:flex md:w-64 md:flex-shrink-0 md:h-screen md:sticky md:top-0 md:left-0 md:z-30">
+      {/* Desktop sidebar (sticky) - shows at 1024px+ */}
+      <aside className="hidden lg:flex lg:w-64 lg:flex-shrink-0 lg:h-screen lg:sticky lg:top-0 lg:left-0 lg:z-30">
         <Sidebar />
       </aside>
 
       {/* Main column */}
       <div className="flex min-h-screen w-0 flex-1 flex-col">
-        {/* Mobile top bar */}
-        <header className="md:hidden sticky top-0 z-40 bg-white border-b">
+        {/* Mobile/tablet top bar - shows below 1024px */}
+        <header className="lg:hidden sticky top-0 z-40 bg-white border-b">
           <div className="h-12 px-4 flex items-center justify-between">
             <button
               onClick={() => setOpen(true)}
@@ -55,14 +55,14 @@ export default function DashboardLayout({
         </header>
 
         {/* Page content */}
-        <main className="flex-1 overflow-x-hidden overflow-y-auto p-4 md:p-6">
+        <main className="flex-1 overflow-x-hidden overflow-y-auto p-4 lg:p-6">
           <div className="mx-auto max-w-7xl">{children}</div>
         </main>
       </div>
 
-      {/* Mobile drawer */}
+      {/* Mobile/tablet drawer - shows below 1024px */}
       <div
-        className={`fixed inset-0 z-50 md:hidden ${
+        className={`fixed inset-0 z-50 lg:hidden ${
           open ? "" : "pointer-events-none"
         }`}
         aria-hidden={!open}
