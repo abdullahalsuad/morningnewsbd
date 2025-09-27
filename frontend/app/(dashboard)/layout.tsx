@@ -5,6 +5,7 @@ import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 import { dbConnect } from "@/service/mongo";
 import DashboardLayout from "@/components/dashboard/DashboardLayout";
+import { Toaster } from "sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default async function Dashboard({ children }: DashboardLayoutProps) {
       >
         <SessionProvider>
           <DashboardLayout>{children}</DashboardLayout>
+          <Toaster position="top-right" expand={false} richColors />
         </SessionProvider>
       </body>
     </html>

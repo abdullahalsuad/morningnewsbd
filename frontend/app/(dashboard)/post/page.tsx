@@ -1,4 +1,4 @@
-import PostNews from "@/components/dashboard/PostNews";
+import PostNews from "@/components/dashboard/news/PostNews";
 import React from "react";
 
 const postPage = () => {

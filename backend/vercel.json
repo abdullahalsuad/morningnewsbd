@@ -12,5 +12,11 @@
       "dest": "src/server.js",
       "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
     }
+  ],
+  "crons": [
+    {
+      "path": "/api/v1/news/cron/publish",
+      "schedule": "* * * * *"
+    }
   ]
 }

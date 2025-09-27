@@ -9,10 +9,10 @@ import {
 
 const router = express.Router();
 
-router.post("/create", createChild);
-router.get("/all", getAllChildren);
-router.get("/:id", getChildById);
-router.put("/update/:id", updateChild);
-router.delete("/delete/:id", deleteChild);
+router.post("/create", createChild); // Create a new child
+router.get("/all", getAllChildren); // Get all children
+router.get("/:id", getChildById); // Get a single child by ID
+router.put("/update/:id", updateChild); // Update a child by ID
+router.delete("/delete/:id", deleteChild); // Delete a child by ID
 
 export default router;

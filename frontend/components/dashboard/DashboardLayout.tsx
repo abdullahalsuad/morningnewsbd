@@ -31,7 +31,7 @@ export default function DashboardLayout({
 
   return (
     <div className="flex min-h-screen bg-gray-50 text-gray-800">
-      {/* Desktop sidebar (sticky) - shows at 1024px+ */}
+      {/* Desktop sidebar */}
       <aside className="hidden lg:flex lg:w-64 lg:flex-shrink-0 lg:h-screen lg:sticky lg:top-0 lg:left-0 lg:z-30">
         <Sidebar />
       </aside>

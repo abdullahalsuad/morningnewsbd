@@ -7,6 +7,7 @@ import connectDB from "./config/db.js";
 import newsRouter from "./routes/news.router.js";
 import parentCategoryRouter from "./routes/parentCategory.router.js";
 import childCategoryRouter from "./routes/childCategory.routes.js";
+import usersRouter from "./routes/users.router.js";
 
 dotenv.config();
 const app = express();
@@ -23,6 +24,7 @@ connectDB();
 app.use(`${API_VERSION}/news`, newsRouter);
 app.use(`${API_VERSION}/parent-category`, parentCategoryRouter);
 app.use(`${API_VERSION}/child-category`, childCategoryRouter);
+app.use(`${API_VERSION}/user`, usersRouter);
 
 // Basic route
 app.get("/", (req, res) => {

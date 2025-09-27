@@ -1,6 +1,7 @@
-import { NewsPayload } from "@/utils/news";
+import { NewsPayload } from "@/types/newsTypes";
 
-const baseUrl = process.env.API_BASE_URL || "http://localhost:8000/api/v1";
+// const baseUrl = process.env.API_BASE_URL || "http://localhost:8000/api/v1";
+const baseUrl = "http://localhost:8000/api/v1";
 
 export async function createNews(data: NewsPayload) {
   const res = await fetch(`${baseUrl}/news/create`, {

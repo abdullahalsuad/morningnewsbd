@@ -1,5 +1,5 @@
 import { fetchNews } from "@/lib/api";
-import { NewsItem } from "@/utils/news";
+import { NewsItem } from "@/types/newsTypes";
 import Link from "next/link";
 import React from "react";
 

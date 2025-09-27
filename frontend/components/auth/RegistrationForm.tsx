@@ -1,5 +1,6 @@
 "use client";
 
+import { Phone } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FaUser, FaLock, FaEnvelope, FaImage } from "react-icons/fa";
@@ -22,6 +23,7 @@ const RegistrationForm = () => {
       const formData = new FormData(event.currentTarget);
       const name = formData.get("name");
       const email = formData.get("email");
+      const number = formData.get("number");
       const password = formData.get("password");
       const image = formData.get("image");
 
@@ -34,6 +36,7 @@ const RegistrationForm = () => {
         body: JSON.stringify({
           name,
           email,
+          number,
           password,
           image,
         }),
@@ -81,6 +84,23 @@ const RegistrationForm = () => {
           type="email"
           name="email"
           placeholder="Enter your email"
+          className="w-full rounded-xl border border-gray-300 dark:border-gray-700 
+                     py-3 pl-10 pr-4 
+                     text-gray-700 dark:text-gray-100 
+                     bg-white dark:bg-gray-800
+                     focus:border-teal-500 dark:focus:border-teal-400
+                     focus:ring-2 focus:ring-teal-200 dark:focus:ring-teal-800
+                     outline-none transition"
+          required
+        />
+      </div>
+      {/* Number */}
+      <div className="relative">
+        <Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500" />
+        <input
+          type="text"
+          name="number"
+          placeholder="Enter your number"
           className="w-full rounded-xl border border-gray-300 dark:border-gray-700 
                      py-3 pl-10 pr-4 
                      text-gray-700 dark:text-gray-100 

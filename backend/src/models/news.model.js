@@ -1,21 +1,47 @@
 import mongoose, { Schema } from "mongoose";
 
-const newsSchema = new mongoose.Schema(
+const NewsSchema = new Schema(
   {
     title: {
       type: String,
-      required: true,
+      required: [true, "Title is required"],
       trim: true,
     },
 
     description: {
       type: String,
+      required: [true, "Description is required"],
+      trim: true,
+    },
+
+    slug: {
+      type: String,
+      unique: true,
+      lowercase: true,
+      trim: true,
+    },
+
+    // Relations
+    parentCategoryId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "ParentCategory",
       required: true,
+    },
+
+    childCategoryId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "ChildCategory",
+      default: null,
     },
 
     publicationDate: {
       type: Date,
       default: Date.now,
+    },
+
+    status: {
+      type: String,
+      enum: ["scheduled", "published"],
     },
 
     author: {
@@ -36,9 +62,8 @@ const newsSchema = new mongoose.Schema(
     coverImage: {
       url: {
         type: String,
-        required: true,
+        required: [true, "Cover image URL is required"],
       },
-
       imgCaption: {
         type: String,
         trim: true,
@@ -48,6 +73,5 @@ const newsSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const News = mongoose.model("News", newsSchema);
-
+const News = mongoose.model("News", NewsSchema);
 export default News;

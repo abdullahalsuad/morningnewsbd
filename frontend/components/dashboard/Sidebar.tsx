@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 
 type Props = {
-  /** optional: close the mobile drawer after navigating */
   onNavigate?: () => void;
 };
 
@@ -40,6 +39,8 @@ export default function Sidebar({ onNavigate }: Props) {
       <nav className="space-y-2">
         <NavLink href="/all">All News</NavLink>
         <NavLink href="/post">Add</NavLink>
+        <NavLink href="/user">All Users</NavLink>
+        <NavLink href="/categories">Categories</NavLink>
       </nav>
 
       {/* Bottom section */}
